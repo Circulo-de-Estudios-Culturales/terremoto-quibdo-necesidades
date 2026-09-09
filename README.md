@@ -6,7 +6,8 @@ Repositorio público de la Fundación Círculo de Estudios Culturales y Polític
 
 | Archivo | Qué es |
 |---|---|
-| `index.html` | El tablero público. Se publica solo con GitHub Pages — es la página que la gente ve. |
+| `index.html` | El tablero público: mapa de Quibdó con las necesidades por barrio y por comuna. |
+| `recursos.html` | Recursos y rutas de atención: líneas de emergencia, RUD, vivienda, salud, salud mental, VBG, y la guía de derivación para el equipo de voluntarios/as. |
 | `AVANCES.md` | Bitácora: qué se ha hecho, cuándo y quién lo hizo. |
 | `README.md` | Este archivo. |
 

@@ -6,6 +6,12 @@ Registro de qué se ha hecho en este proyecto, en orden cronológico (lo más re
 
 ---
 
+### 2026-09-09 (tarde) — Comunas, lista plegable y página de recursos
+- **Comunas en el mapa.** Se agruparon los barrios por comuna usando la asignación que ya traía la cartografía social del equipo (37 de los 39 barrios ubicados). Cada comuna es un área punteada clickeable: al hacer clic muestra el agregado de esa comuna — hogares, desglose de daño, % de daño grave, necesidad más reportada y el detalle barrio por barrio. Son agrupaciones de trabajo, no límites oficiales de comuna. *Pendiente: El Jardín y Jardín no aparecen en la cartografía social, falta decidir a qué comuna pertenecen.*
+- **La lista de tarjetas quedó oculta por defecto.** Ahora la información se ve al hacer clic en el mapa. La lista completa se abre con un botón, y aparece sola cuando se escribe algo en el buscador.
+- **Cabí salió del mapa.** Su punto de referencia (una escuela) queda al sur, fuera del área mapeada. Pasó a la lista de barrios sin ubicación, que es lo honesto. *Pendiente: ubicarlo.*
+- **Nueva página `recursos.html`**, armada con el Directorio de Servicios Institucionales y la Ruta de Acompañamiento Psicosocial: líneas 106/155/141/192, el paso del RUD, vivienda, alimentación, salud, salud mental, VBG, protección de NNA, servicios básicos, educación y orientación jurídica; más una sección para voluntarios/as con el alcance del acompañamiento y los criterios de derivación clínica. Enlazada desde el tablero.
+
 ### 2026-09-09 — Mapa geográfico real y desglose de daño en vivienda
 Dos cambios grandes:
 

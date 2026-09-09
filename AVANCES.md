@@ -6,6 +6,11 @@ Registro de qué se ha hecho en este proyecto, en orden cronológico (lo más re
 
 ---
 
+### 2026-09-09 (noche) — Corrección importante en el conteo de necesidades
+**Error encontrado y corregido:** el script separaba las respuestas de selección múltiple partiendo el texto por comas, pero varias opciones del formulario tienen comas adentro del paréntesis. La opción "apoyo psicosocial (es decir, en la salud mental y emocional suya y/o de su familia)" quedaba cortada en dos y se contaba como dos necesidades distintas ("apoyo psicosocial (es decir" y "en la salud mental y emocional suya y/o de su familia)"). Ahora solo corta en las comas que están fuera de paréntesis, así que el apoyo psicosocial —que es una pregunta explícita del formulario— se cuenta correcto. Además las etiquetas largas se acortan al mostrarlas ("apoyo psicosocial" en vez de la explicación completa).
+
+**Diseño:** barra superior con el logo pequeño y el enlace a Recursos; las cifras pasaron a tres bloques propios; el panel del barrio ahora es fijo y sigue al bajar por el mapa; la nota larga salió de la leyenda; y la lista de barrios dejó de ser 45 tarjetas y ahora es una tabla compacta ordenada por hogares, con "OTRO" y "Sin barrio registrado" al final marcados como sin clasificar.
+
 ### 2026-09-09 (tarde) — Comunas, lista plegable y página de recursos
 - **Comunas en el mapa.** Se agruparon los barrios por comuna usando la asignación que ya traía la cartografía social del equipo (37 de los 39 barrios ubicados). Cada comuna es un área punteada clickeable: al hacer clic muestra el agregado de esa comuna — hogares, desglose de daño, % de daño grave, necesidad más reportada y el detalle barrio por barrio. Son agrupaciones de trabajo, no límites oficiales de comuna. *Pendiente: El Jardín y Jardín no aparecen en la cartografía social, falta decidir a qué comuna pertenecen.*
 - **La lista de tarjetas quedó oculta por defecto.** Ahora la información se ve al hacer clic en el mapa. La lista completa se abre con un botón, y aparece sola cuando se escribe algo en el buscador.

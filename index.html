@@ -19,14 +19,26 @@
   body { margin:0; background:var(--crema); color:var(--texto); font-family:'Courier New', Courier, monospace; }
   .wrap { max-width:1480px; margin:0 auto; padding:40px 24px 60px; display:flex; flex-direction:column; gap:24px; }
   .mono { font-family:'Courier New', Courier, monospace; }
+  .topbar { display:flex; justify-content:space-between; align-items:center; gap:16px;
+            padding-bottom:14px; border-bottom:1px solid var(--borde); }
   .brand { display:flex; align-items:center; gap:14px; }
-  .brand img { height:88px; width:auto; display:block; }
+  .brand img { height:46px; width:auto; display:block; }
+  .btnlink { text-decoration:none; white-space:nowrap; padding:9px 14px; border-radius:999px;
+             border:1px solid var(--naranja); color:var(--naranja); font-family:'Courier New', Courier, monospace;
+             font-weight:700; font-size:11.5px; }
+  .btnlink:hover { background:var(--naranja-suave); }
+  .titulo { display:flex; flex-direction:column; gap:8px; max-width:72ch; }
+  .eyebrow { font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--texto-tenue); }
+  .panel-col { position:sticky; top:16px; align-self:flex-start; }
+  .nota-mapa { font-size:11.5px; line-height:1.7; color:var(--texto-tenue); max-width:100ch; }
   h1 { margin:0; font-size:34px; font-weight:700; letter-spacing:-.01em; line-height:1.1; color:var(--naranja); }
   .muted { color:var(--texto-suave); }
   .card { background:#FFFFFF; border:1px solid var(--borde); border-radius:10px; padding:18px; }
   .row { display:flex; gap:20px; flex-wrap:wrap; align-items:flex-start; }
-  .kpis { display:flex; gap:26px; font-size:10px; letter-spacing:.1em; color:var(--texto-tenue); flex-wrap:wrap; }
-  .kpis b { display:block; font-size:26px; font-family:'Courier New', Courier, monospace; font-weight:700; color:var(--naranja); letter-spacing:0; }
+  .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; }
+  .kpis > div { background:#FFFFFF; border:1px solid var(--borde); border-radius:10px; padding:14px 16px; }
+  .kpis b { display:block; font-size:30px; font-family:'Courier New', Courier, monospace; font-weight:700; color:var(--naranja); line-height:1.1; }
+  .kpis span { display:block; font-size:10px; letter-spacing:.1em; color:var(--texto-tenue); margin-top:4px; }
   svg { width:100%; height:auto; display:block; }
   .barrio-shape { cursor:pointer; transition:opacity .15s ease; }
   .side-title { font-family:'Courier New', Courier, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--texto-tenue); margin-bottom:8px; }
@@ -36,6 +48,21 @@
   .banner { display:none; background:var(--naranja-suave); border:1.5px solid #E9C7A6; color:#8A4008; border-radius:8px; padding:12px 16px; font-size:13px; }
   .banner.show { display:block; }
   [hidden] { display:none !important; }
+  .tabla-wrap { overflow-x:auto; border:1px solid var(--borde); border-radius:10px; background:#FFFFFF; }
+  table.lista { border-collapse:collapse; width:100%; font-size:12.5px; }
+  table.lista th { text-align:left; font-size:10px; letter-spacing:.1em; text-transform:uppercase;
+                   color:var(--texto-tenue); font-weight:400; padding:11px 14px;
+                   border-bottom:1px solid var(--borde); white-space:nowrap; }
+  table.lista td { padding:9px 14px; border-bottom:1px solid var(--borde-suave); vertical-align:top; }
+  table.lista tr:last-child td { border-bottom:none; }
+  table.lista tbody tr { cursor:pointer; }
+  table.lista tbody tr:hover { background:var(--naranja-suave); }
+  table.lista .n { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  table.lista .b { font-weight:700; }
+  table.lista .nec { color:var(--texto-suave); }
+  table.lista .sinubic { color:var(--texto-tenue); font-style:italic; }
+  .pill { display:inline-block; padding:1px 7px; border-radius:999px; font-size:10.5px;
+          background:var(--naranja-suave); color:#8A4008; white-space:nowrap; }
   .cards { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:12px; }
   .b-card { background:#FFFFFF; border:1px solid var(--borde); border-radius:8px; padding:12px 14px; cursor:pointer; text-align:left; font-family:'Courier New', Courier, monospace; }
   .b-card:hover { border-color:var(--naranja); }
@@ -56,7 +83,7 @@
        en el mensaje / README que acompaña este archivo.
   ============================================================ -->
   <script>
-    const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSLLkgQrLy37yZ56yK-PXVOcIEuft5ulNejZDHDKwe1NMRIq3rsNrnQZd97wPXymvluid050IL5KVYq/pub?gid=1329933524&single=true&output=csv";
+    const SHEET_CSV_URL = "PEGA_AQUI_TU_ENLACE_CSV_PUBLICADO";
   </script>
 
   <!-- ============================================================
@@ -70,19 +97,19 @@
 
   <div id="banner" class="banner"></div>
 
-  <div class="row" style="justify-content:space-between;align-items:center;gap:12px">
-  <div class="brand" id="brandRow" style="display:none">
-    <img id="logoImg" src="" alt="Fundación Círculo de Estudios Culturales y Políticos">
-  </div>
-  <a href="./recursos.html" class="reset mono" style="text-decoration:none;padding:9px 14px">Recursos y rutas de atención →</a>
-  </div>
+  <header class="topbar">
+    <div class="brand" id="brandRow" style="display:none">
+      <img id="logoImg" src="" alt="Fundación Círculo de Estudios Culturales y Políticos">
+    </div>
+    <a href="./recursos.html" class="btnlink">Recursos y rutas de atención →</a>
+  </header>
 
-  <div class="row" style="justify-content:space-between;align-items:flex-end;border-bottom:1px solid #E3DED6;padding-bottom:20px">
-    <div style="max-width:680px;display:flex;flex-direction:column;gap:8px">
-      <div class="mono" style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8A8175">Lectura de contexto del sismo y sus afectaciones en Quibdó</div>
+  <div class="titulo">
+      <div class="eyebrow">Lectura de contexto del sismo y sus afectaciones en Quibdó</div>
       <h1>Necesidades por barrio</h1>
+      <p class="muted" style="margin:0;font-size:14.5px;line-height:1.6">Esta página lee directamente la pestaña "Mapa de Necesidades" de la hoja de cálculo del formulario de campo. No contiene nombres, documentos ni teléfonos: solo conteos y porcentajes agregados por barrio. <span id="actualizado" class="mono"></span></p>
+    </div>
     <div class="kpis" id="kpis"></div>
-  </div>
 
   <div class="row">
     <div class="card" style="flex:1 1 620px;min-width:480px;position:relative">
@@ -105,10 +132,9 @@
             <i style="width:9px;height:9px;border-radius:50%;background:#D9A76A;display:inline-block"></i> posible
           </span>
         </div>
-        <div id="notaUbicacion" style="line-height:1.6"></div>
       </div>
     </div>
-    <div style="flex:0 1 320px;min-width:280px;display:flex;flex-direction:column;gap:14px">
+    <div class="panel-col" style="flex:0 1 320px;min-width:280px;display:flex;flex-direction:column;gap:14px">
       <div class="card">
         <div class="side-title">Barrio seleccionado</div>
         <div class="side-name" id="selName">Ninguno</div>
@@ -117,6 +143,8 @@
       <button class="reset" id="resetBtn">Ver todos</button>
     </div>
   </div>
+
+  <div id="notaUbicacion" class="nota-mapa mono"></div>
 
   <div style="display:flex;flex-direction:column;gap:14px;border-top:1px solid #E3DED6;padding-top:26px">
     <div class="row" style="justify-content:space-between;align-items:flex-end">
@@ -128,7 +156,7 @@
         style="flex:1 1 240px;max-width:340px;padding:10px 14px;border:1px solid var(--borde);border-radius:8px;background:#FFFFFF;color:var(--texto);font-size:13px;outline:none">
       <button class="reset" id="toggleLista">Ver la lista completa</button>
     </div>
-    <div class="cards" id="cards" hidden></div>
+    <div id="cards" hidden></div>
   </div>
 
   <footer>Fuente: formulario de campo del terremoto → Google Sheet → script que agrega por barrio → esta página, que lee el CSV publicado de esa hoja. Ningún dato individual (nombre, documento, teléfono, relato) pasa por esta página. Base cartográfica: calles y río de OpenStreetMap (ODbL); ubicación de barrios de OpenStreetMap; viviendas evaluadas por Copernicus EMS, activación EMSR916 (© European Union, 2026).</footer>
@@ -362,34 +390,54 @@ function renderSide(){
 let filtroBarrio = '';
 
 function renderCards(){
-  const todos = Object.values(barriosPorNombre).sort((a,b)=>b.hogares-a.hogares);
+  const todos = Object.values(barriosPorNombre);
+  // "OTRO" y "Sin barrio registrado" no son barrios: van al final, aparte.
+  const esSinClasificar = b => /^(otro|sin barrio)/i.test(b.barrio);
+  const orden = (a,c) => (esSinClasificar(a) - esSinClasificar(c)) || (c.hogares - a.hogares)
+                         || a.barrio.localeCompare(c.barrio, 'es');
+  todos.sort(orden);
   const list = filtroBarrio ? todos.filter(b => norm(b.barrio).includes(filtroBarrio)) : todos;
-  const cardsEl = document.getElementById('cards');
+
+  const cont = document.getElementById('cards');
   const mostrar = listaVisible || !!filtroBarrio;
-  cardsEl.hidden = !mostrar;
+  cont.hidden = !mostrar;
   const btn = document.getElementById('toggleLista');
   if (btn) btn.textContent = listaVisible ? 'Ocultar la lista' : 'Ver la lista completa (' + todos.length + ')';
-  if (!mostrar){
-    document.getElementById('resultLine').textContent = todos.length + ' barrios/zonas · ' + todos.reduce((a,b)=>a+b.hogares,0) + ' hogares en total';
-    return;
-  }
-  if (!list.length){
-    cardsEl.innerHTML = '<div class="muted" style="font-size:13px;grid-column:1/-1">No hay ningún barrio que coincida con "'+filtroBarrio+'".</div>';
-  } else {
-    cardsEl.innerHTML = list.map(b=>
-      '<button class="b-card" onclick="(function(){selBarrio=\''+b.barrio.replace(/'/g,"\\'")+'\';draw();window.scrollTo({top:0,behavior:\'smooth\'});})()">' +
-      '<div class="top"><span>'+b.barrio+'</span><span class="meta">'+b.hogares+(b.hogares===1?' hogar':' hogares')+(b.pctGrave!==null?' · '+b.pctGrave+'% grave':'')+'</span></div>' +
-      '<div class="need">'+(b.resumen||'sin datos suficientes')+'</div></button>'
-    ).join('');
-  }
+
   const totalTxt = todos.length + ' barrios/zonas · ' + todos.reduce((a,b)=>a+b.hogares,0) + ' hogares en total';
   document.getElementById('resultLine').textContent = filtroBarrio ? (list.length + ' de ' + totalTxt) : totalTxt;
-}
+  if (!mostrar) return;
 
-document.getElementById('buscarBarrio').addEventListener('input', (e)=>{
-  filtroBarrio = norm(e.target.value.trim());
-  renderCards();
-});
+  if (!list.length){
+    cont.innerHTML = '<div class="muted" style="font-size:13px;padding:14px">No hay ningún barrio que coincida con la búsqueda.</div>';
+    return;
+  }
+  const ubicables = Object.keys(GEO.barrios).map(norm);
+  const fila = b => {
+    const enMapa = ubicables.indexOf(norm(b.barrio)) !== -1;
+    const grave = b.pctGrave === null ? '—' : b.pctGrave + '%';
+    return '<tr data-barrio="' + b.barrio.replace(/"/g,'&quot;') + '">' +
+      '<td class="b' + (esSinClasificar(b) ? ' sinubic' : '') + '">' + b.barrio +
+        (enMapa ? '' : ' <span class="pill">sin ubicación</span>') + '</td>' +
+      '<td class="n">' + b.hogares + '</td>' +
+      '<td class="n">' + grave + '</td>' +
+      '<td class="nec">' + (b.resumen || 'sin datos suficientes') + '</td></tr>';
+  };
+  cont.innerHTML =
+    '<div class="tabla-wrap"><table class="lista"><thead><tr>' +
+    '<th>Barrio / zona</th><th class="n">Hogares</th><th class="n">% daño grave</th>' +
+    '<th>Aquí se necesita</th></tr></thead><tbody>' +
+    list.map(fila).join('') + '</tbody></table></div>';
+
+  cont.querySelectorAll('tbody tr').forEach(tr => {
+    tr.addEventListener('click', () => {
+      selComuna = null;
+      selBarrio = tr.getAttribute('data-barrio');
+      draw();
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+}
 
 function renderKPIs(){
   const list = Object.values(barriosPorNombre);
@@ -397,7 +445,7 @@ function renderKPIs(){
   const ubicables = Object.keys(GEO.barrios).map(norm);
   const enMapa = list.filter(b=>ubicables.indexOf(norm(b.barrio))!==-1).length;
   const kpis = [[String(totalH),'HOGARES'],[String(list.length),'BARRIOS/ZONAS'],[String(enMapa),'EN EL MAPA']];
-  document.getElementById('kpis').innerHTML = kpis.map(([v,l])=>'<div><b>'+v+'</b>'+l+'</div>').join('');
+  document.getElementById('kpis').innerHTML = kpis.map(([v,l])=>'<div><b>'+v+'</b><span>'+l+'</span></div>').join('');
 }
 
 function banner(msg, show){

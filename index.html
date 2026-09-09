@@ -101,6 +101,8 @@
       <h2 style="margin:0;font-size:22px;font-weight:700;letter-spacing:-.01em">Todos los barrios registrados</h2>
       <span class="mono" style="font-size:11px;color:#8A8175" id="resultLine"></span>
     </div>
+    <input id="buscarBarrio" type="text" placeholder="Buscar barrio..." class="mono"
+      style="width:100%;max-width:340px;padding:10px 14px;border:1px solid var(--borde);border-radius:8px;background:#FFFFFF;color:var(--texto);font-size:13px;outline:none">
     <div class="cards" id="cards"></div>
   </div>
 
@@ -214,15 +216,29 @@ function renderSide(){
   el.innerHTML = rows.map(([k,v])=>'<div class="kv"><span>'+k+'</span><span>'+v+'</span></div>').join('');
 }
 
+let filtroBarrio = '';
+
 function renderCards(){
-  const list = Object.values(barriosPorNombre).sort((a,b)=>b.hogares-a.hogares);
-  document.getElementById('cards').innerHTML = list.map(b=>
-    '<button class="b-card" onclick="(function(){selBarrio=\''+b.barrio.replace(/'/g,"\\'")+'\';draw();window.scrollTo({top:0,behavior:\'smooth\'});})()">' +
-    '<div class="top"><span>'+b.barrio+'</span><span class="meta">'+b.hogares+(b.hogares===1?' hogar':' hogares')+'</span></div>' +
-    '<div class="need">'+(b.resumen||'sin datos suficientes')+'</div></button>'
-  ).join('');
-  document.getElementById('resultLine').textContent = list.length + ' barrios/zonas · ' + list.reduce((a,b)=>a+b.hogares,0) + ' hogares en total';
+  const todos = Object.values(barriosPorNombre).sort((a,b)=>b.hogares-a.hogares);
+  const list = filtroBarrio ? todos.filter(b => norm(b.barrio).includes(filtroBarrio)) : todos;
+  const cardsEl = document.getElementById('cards');
+  if (!list.length){
+    cardsEl.innerHTML = '<div class="muted" style="font-size:13px;grid-column:1/-1">No hay ningún barrio que coincida con "'+filtroBarrio+'".</div>';
+  } else {
+    cardsEl.innerHTML = list.map(b=>
+      '<button class="b-card" onclick="(function(){selBarrio=\''+b.barrio.replace(/'/g,"\\'")+'\';draw();window.scrollTo({top:0,behavior:\'smooth\'});})()">' +
+      '<div class="top"><span>'+b.barrio+'</span><span class="meta">'+b.hogares+(b.hogares===1?' hogar':' hogares')+'</span></div>' +
+      '<div class="need">'+(b.resumen||'sin datos suficientes')+'</div></button>'
+    ).join('');
+  }
+  const totalTxt = todos.length + ' barrios/zonas · ' + todos.reduce((a,b)=>a+b.hogares,0) + ' hogares en total';
+  document.getElementById('resultLine').textContent = filtroBarrio ? (list.length + ' de ' + totalTxt) : totalTxt;
 }
+
+document.getElementById('buscarBarrio').addEventListener('input', (e)=>{
+  filtroBarrio = norm(e.target.value.trim());
+  renderCards();
+});
 
 function renderKPIs(){
   const list = Object.values(barriosPorNombre);

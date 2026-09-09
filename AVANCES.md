@@ -6,6 +6,28 @@ Registro de qué se ha hecho en este proyecto, en orden cronológico (lo más re
 
 ---
 
+### 2026-09-09 — Mapa geográfico real y desglose de daño en vivienda
+Dos cambios grandes:
+
+**1. Desglose de daño.** El script ahora cuenta por separado, por barrio, las viviendas colapsadas, con daño severo, con daño leve y sin daño visible, y calcula el "% de daño grave" (colapsadas + severo). Son 5 columnas nuevas al final de la pestaña "Mapa de Necesidades". El mapa usa ese porcentaje para colorear: el color ya no significa "cuántos hogares" sino "qué tan grave es el daño".
+
+**2. Mapa real.** Se reemplazó el mapa esquemático de la cartografía social por un mapa geográfico verdadero:
+- Calles del centro de Quibdó: Copernicus EMS, activación EMSR916, producto AOI 04 Quibdo Centre (616 tramos).
+- Calles del norte y río Atrato: OpenStreetMap (384 tramos).
+- Ubicación de los barrios: OpenStreetMap, place=neighbourhood/suburb. 34 de los 44 barrios de la hoja quedaron con coordenada exacta.
+- 6 barrios quedaron con ubicación aproximada, tomada de una referencia con el mismo nombre (escuela, aeropuerto): Cabí, Caraño, Caraño Piñal, La Esmeralda, Obrero, Parque la Gloria. Se marcan con borde punteado. **Pendiente: confirmar dónde quedan realmente.**
+- 4 barrios siguen sin ubicación y solo aparecen en la lista: La Cascorba, La Paloma, Las Palmas de Medrada, Obapo. **Pendiente: ubicarlos.**
+- Capa opcional: las 74 viviendas evaluadas por satélite por Copernicus (18 destruidas, 8 dañadas, 48 posiblemente dañadas). Es evaluación oficial, independiente del trabajo de campo.
+
+Nota sobre las fuentes descartadas: el DANE bloquea la descarga directa y su Marco Geoestadístico identifica las zonas urbanas por código, no por nombre de barrio, así que no sirve para cruzar con la hoja. El paquete de Copernicus no trae ningún nombre de barrio (el campo `name` dice "Unknown" en las 74 edificaciones).
+
+Se agregó también un buscador de barrios sobre la lista.
+
+### 2026-09-09 — ⚠️ Hallazgo urgente: brecha de información en el reporte oficial de daños
+La Alcaldía de Quibdó tiene una página oficial (reportaquibdo.com) para que las familias reporten el daño de su vivienda, con un plazo que cierra en los próximos dos días. Según una presidenta de JAC consultada, en la práctica los reportes de su sector solo se están canalizando a través de las Juntas de Acción Comunal, no directamente por la página oficial — es decir, hay riesgo real de que familias afectadas queden por fuera del censo oficial (y de la ayuda institucional asociada) si su JAC no alcanza a trasladar el reporte a tiempo. Pendiente de verificar qué tan generalizado es este patrón en otras JAC/barrios.
+
+**Acción tomada:** se redactó un mensaje corto para difundir a través de las JAC urgiendo el registro directo antes del cierre (ver más abajo / solicitar a Silvia).
+
 ### 2026-09-08 — Corrección de barrios duplicados
 Se identificó que algunas respuestas del formulario nombran el mismo barrio de formas distintas ("El reposo número 2" / "Reposo 2", "Caraño" / "Caraño Piñal"). Se agregó al script (`Mapa_Necesidades_AppsScript.gs`) una tabla `ALIASES_BARRIO` que une esas variantes antes de sumar los hogares, para que no aparezcan como barrios separados en el Mapa de Necesidades.
 

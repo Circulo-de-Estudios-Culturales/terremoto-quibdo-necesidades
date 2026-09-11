@@ -6,6 +6,23 @@ Registro de qué se ha hecho en este proyecto, en orden cronológico (lo más re
 
 ---
 
+### 2026-09-11 (tarde) — Rediseño, contenido institucional y "el terremoto en cifras"
+Se adoptó el rediseño oscuro con navegación por secciones y se le conectó todo lo que ya existía. Cambios:
+
+- **Contenido real en las secciones.** Quiénes somos (los tres frentes: documentación hogar por hogar, acompañamiento psicosocial de contención con máximo 4-5 sesiones, y lectura de contexto), contexto (el sismo del 10 de agosto, el 93 % del Chocó afectado, la doble emergencia del 28 de agosto, el vacío de desagregación étnica en el censo oficial, la barrera del reporte vía JAC y el riesgo diferencial para mujeres y niñas), metodología (qué se publica, qué no y por qué, con el umbral de tres hogares) y cómo apoyar.
+- **Nueva sección "el terremoto en cifras"**, calculada en vivo desde la misma hoja: barra de avance hacia la meta de 400 personas, hogares, personas en esos hogares, hogares con NNA, barrios y % de viviendas con daño grave; más tres gráficas de barras (estado de las viviendas, lo que más se pide, dónde se concentra el daño grave). Se actualiza sola con cada respuesta nueva.
+- **Script:** ahora suma las personas por hogar, detecta los hogares con niñas, niños o adolescentes, y publica el agregado de pertenencia étnica, género y composición del hogar — con supresión en barrios de menos de tres hogares.
+- **La capa de equipamientos se oculta mientras esté vacía**, para que no aparezca un "sube el archivo" en una página que se comparte.
+- **La página de recursos** se pasó al mismo diseño oscuro.
+
+### 2026-09-11 — Privacidad: se dejan de publicar los textos libres, y arreglo de la página en blanco
+
+**1. Riesgo de privacidad corregido (lo más importante).** Las preguntas de necesidad prioritaria, dónde duerme la familia y redes de apoyo permiten respuesta libre, y el script publicaba ese texto tal cual en la pestaña pública. En barrios con uno o dos hogares eso deja de ser un agregado y describe a esa familia: alcanzaron a quedar publicados un medicamento con nombre propio, una condición de salud, las edades de dos menores y el arreglo de dónde duerme cada integrante de un hogar. Ahora el script solo publica textualmente las opciones predefinidas del formulario (listas blancas en CONFIG: `OPCIONES_NECESIDADES`, `OPCIONES_DONDE_DUERME`, `OPCIONES_REDES_APOYO`); cualquier otra respuesta se cuenta pero se muestra como "otra respuesta (texto libre, no se publica)". Si cambian las opciones del formulario hay que actualizar esas listas.
+
+**2. Apoyo psicosocial mal contado.** El script separaba las respuestas de selección múltiple por comas, y la opción "apoyo psicosocial (es decir, en la salud mental y emocional suya y/o de su familia)" tiene una coma adentro del paréntesis: quedaba partida en dos y se contaba como dos necesidades distintas. Ahora solo corta en las comas que están fuera de paréntesis, y las etiquetas largas se acortan al mostrarlas.
+
+**3. La página mostraba "No se pudo cargar el Mapa de Necesidades".** Al editar `index.html` en GitHub se borraron dos líneas: el párrafo de introducción y el `</div>` que cerraba ese bloque. Dentro de ese párrafo vivía el elemento donde se escribe la hora de actualización; al no existir, la carga de datos se interrumpía y aparecía el aviso de error aunque los datos sí hubieran llegado. Se corrigieron las dos cosas: la hora de actualización ahora es un elemento propio, independiente del texto de introducción, y **todas** las escrituras al HTML pasan por funciones tolerantes, así que quitar o mover cualquier elemento decorativo ya no puede volver a tumbar la página.
+
 ### 2026-09-09 (noche) — Corrección importante en el conteo de necesidades
 **Error encontrado y corregido:** el script separaba las respuestas de selección múltiple partiendo el texto por comas, pero varias opciones del formulario tienen comas adentro del paréntesis. La opción "apoyo psicosocial (es decir, en la salud mental y emocional suya y/o de su familia)" quedaba cortada en dos y se contaba como dos necesidades distintas ("apoyo psicosocial (es decir" y "en la salud mental y emocional suya y/o de su familia)"). Ahora solo corta en las comas que están fuera de paréntesis, así que el apoyo psicosocial —que es una pregunta explícita del formulario— se cuenta correcto. Además las etiquetas largas se acortan al mostrarlas ("apoyo psicosocial" en vez de la explicación completa).
 

@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Necesidades del terremoto — Quibdó</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@700&family=Anton&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; }
   :root {
@@ -72,6 +75,81 @@
   footer { font-family:'Courier New', Courier, monospace; font-size:11px; line-height:1.7; color:var(--texto-tenue); border-top:1px solid var(--borde); padding-top:16px; max-width:900px; }
   button.reset { padding:7px 12px; border-radius:999px; border:1px solid var(--naranja); background:transparent; color:var(--naranja); font-family:'Courier New', Courier, monospace; font-weight:700; font-size:11px; cursor:pointer; }
   h2 { color:var(--naranja) !important; }
+
+  /* ============ tema oscuro "la opinión en el diluvio" ============ */
+  :root{
+    --naranja:#FF7A1A; --naranja-suave:#1C1206; --crema:#000000;
+    --texto:#F2EDE6; --texto-suave:#B8B1A7; --texto-tenue:#7E766B;
+    --borde:#2B2B2B; --borde-suave:#1A1A1A; --magenta:#FF2E93;
+    --papel:#0C0C0C;
+  }
+  body{ background:#000; color:var(--texto); }
+  .card,.kpis>div,.tabla-wrap,.b-card{ background:var(--papel); border-color:var(--borde); }
+  .display{ font-family:'Anton',sans-serif; font-weight:400; letter-spacing:.005em; text-transform:lowercase; }
+  h1{ font-family:'Anton',sans-serif; font-weight:400; font-size:clamp(44px,7vw,88px);
+      line-height:.92; letter-spacing:.01em; color:var(--texto); text-transform:lowercase; }
+  h2{ font-family:'Anton',sans-serif; font-weight:400; text-transform:lowercase;
+      letter-spacing:.01em; color:var(--texto) !important; font-size:30px !important; }
+  .eyebrow{ color:var(--magenta); font-family:'Archivo Narrow',sans-serif; font-weight:700;
+            font-size:20px; letter-spacing:.02em; text-transform:lowercase; }
+  .kicker{ color:var(--naranja); font-family:'Archivo Narrow',sans-serif; font-weight:700;
+           font-size:15px; letter-spacing:.02em; text-transform:lowercase; }
+  .wrap{ padding-top:0; gap:28px; }
+
+  /* menú */
+  .nav{ position:sticky; top:0; z-index:20; background:#000; border-bottom:1px solid var(--borde);
+        display:flex; align-items:center; gap:18px; flex-wrap:wrap; padding:14px 0 12px; }
+  .nav .mark{ display:flex; align-items:center; gap:10px; margin-right:auto; }
+  .nav .mark img{ height:34px; width:auto; display:block; }
+  .nav .mark span{ font-family:'Anton',sans-serif; font-size:17px; text-transform:lowercase;
+                   letter-spacing:.02em; color:var(--texto); }
+  .nav a.item{ text-decoration:none; color:var(--texto-suave); font-size:11.5px; letter-spacing:.02em;
+               padding:5px 0; border-bottom:1.5px solid transparent; white-space:nowrap; }
+  .nav a.item:hover{ color:var(--magenta); border-bottom-color:var(--magenta); }
+  .nav a.item.cta{ color:#000; background:var(--magenta); border:none; border-radius:999px;
+                   padding:7px 13px; font-weight:700; }
+  .nav a.item.cta:hover{ background:var(--naranja); color:#000; }
+
+  a{ color:var(--magenta); }
+  a:hover{ color:var(--naranja); }
+  .btnlink{ border-color:var(--naranja); color:var(--naranja); }
+  .btnlink:hover{ background:#1C1206; }
+  button.reset{ border-color:var(--naranja); color:var(--naranja); }
+  button.reset:hover{ background:#1C1206; }
+  .kpis b{ font-family:'Anton',sans-serif; font-weight:400; font-size:40px; color:var(--naranja); }
+  .kv{ border-bottom-color:var(--borde-suave); }
+  .side-name{ font-family:'Anton',sans-serif; font-weight:400; text-transform:lowercase;
+              font-size:30px; color:var(--naranja); }
+  .pill{ background:#2A0F1D; color:#FF7FB8; }
+  table.lista tbody tr:hover{ background:#141414; }
+  table.lista th{ border-bottom-color:var(--borde); }
+  table.lista td{ border-bottom-color:var(--borde-suave); }
+  #buscarBarrio{ background:#0C0C0C !important; border-color:var(--borde) !important; color:var(--texto) !important; }
+  .banner.show{ background:#1C1206; border-color:#5A3A12; color:#FFB472; }
+  footer{ border-top-color:var(--borde); }
+  .sec{ display:flex; flex-direction:column; gap:14px; border-top:1px solid var(--borde); padding-top:26px; }
+  .prosa{ font-size:14px; line-height:1.75; color:var(--texto-suave); max-width:78ch; }
+  .meta-wrap { border:1px solid var(--borde); border-radius:10px; padding:18px 20px; background:var(--papel); }
+  .meta-barra { height:16px; border-radius:999px; background:var(--borde-suave); overflow:hidden; margin:10px 0 8px; border:1px solid var(--borde); }
+  .meta-barra i { display:block; height:100%; background:var(--naranja); }
+  .barras { display:flex; flex-direction:column; gap:9px; margin-top:12px; }
+  .fila-barra { display:grid; grid-template-columns:minmax(120px,190px) 1fr auto; gap:10px; align-items:center; font-size:12.5px; }
+  .fila-barra .pista { height:11px; background:var(--borde-suave); border-radius:999px; overflow:hidden; }
+  .fila-barra .pista i { display:block; height:100%; }
+  .fila-barra .val { font-variant-numeric:tabular-nums; color:var(--texto-tenue); font-size:11.5px; white-space:nowrap; }
+  .grid3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; margin-top:18px; }
+  .tarj { border:1px solid var(--borde); border-radius:10px; padding:16px 18px; background:var(--papel); }
+  .tarj h3 { margin:0 0 7px; font-size:13px; letter-spacing:.04em; text-transform:uppercase; color:var(--naranja); }
+  .tarj p { margin:0; font-size:13px; line-height:1.65; color:var(--texto-suave); }
+  .prosa b { color:var(--texto); }
+
+  .ctxrow{ display:flex; flex-wrap:wrap; gap:8px; padding-top:12px; margin-top:12px;
+           border-top:1px solid var(--borde-suave); }
+  .ctxtog{ display:flex; align-items:center; gap:7px; cursor:pointer; font-size:11px;
+           color:var(--texto-suave); border:1px solid var(--borde); border-radius:999px; padding:6px 11px; }
+  .ctxtog:hover{ border-color:var(--texto-tenue); color:var(--texto); }
+  .ctxtog input{ accent-color:var(--magenta); margin:0; }
+  .ctxtog i{ width:9px; height:9px; display:inline-block; }
 </style>
 </head>
 <body>
@@ -83,7 +161,7 @@
        en el mensaje / README que acompaña este archivo.
   ============================================================ -->
   <script>
-    const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSLLkgQrLy37yZ56yK-PXVOcIEuft5ulNejZDHDKwe1NMRIq3rsNrnQZd97wPXymvluid050IL5KVYq/pub?gid=1329933524&single=true&output=csv";
+    const SHEET_CSV_URL = "PEGA_AQUI_TU_ENLACE_CSV_PUBLICADO";
   </script>
 
   <!-- ============================================================
@@ -97,17 +175,29 @@
 
   <div id="banner" class="banner"></div>
 
-  <header class="topbar">
-    <div class="brand" id="brandRow" style="display:none">
-      <img id="logoImg" src="" alt="Fundación Círculo de Estudios Culturales y Políticos">
+  <nav class="nav">
+    <div class="mark" id="brandRow">
+      <img id="logoImg" src="" alt="Fundación Círculo de Estudios Culturales y Políticos" style="display:none">
+      <span>observatorio quibdó</span>
     </div>
-    <a href="./recursos.html" class="btnlink">Recursos y rutas de atención →</a>
-  </header>
+    <a class="item" href="#mapa-sec">el mapa</a>
+    <a class="item" href="#barrios-sec">necesidades por barrio</a>
+    <a class="item" href="#cifras-sec">el terremoto en cifras</a>
+      <a class="item" href="#contexto-sec">contexto</a>
+    <a class="item" href="./recursos.html">recursos y rutas de atención</a>
+    <a class="item" href="#metodo-sec">metodología y fuentes</a>
+    <a class="item" href="#quienes-sec">quiénes somos</a>
+    <a class="item cta" href="#apoyar-sec">cómo apoyar</a>
+  </nav>
 
-  <div class="titulo">
-      <div class="eyebrow">Lectura de contexto del sismo y sus afectaciones en Quibdó</div>
-      <h1>Necesidades por barrio</h1>
-     <div class="kpis" id="kpis"></div>
+  <div class="titulo" id="mapa-sec" style="padding-top:26px">
+      <div class="eyebrow">lectura de contexto del sismo</div>
+      <h1>necesidades por barrio</h1>
+      <div class="kicker">quibdó · observatorio de derechos humanos</div>
+      <p class="muted" style="margin:0;font-size:14.5px;line-height:1.6">Esta página lee directamente la pestaña "Mapa de Necesidades" de la hoja de cálculo del formulario de campo. No contiene nombres, documentos ni teléfonos: solo conteos y porcentajes agregados por barrio. <span id="actualizado" class="mono"></span></p>
+    </div>
+    <div class="kpis" id="kpis"></div>
+
   <div class="row">
     <div class="card" style="flex:1 1 620px;min-width:480px;position:relative">
       <svg id="mapa" viewBox="0 0 1000 1510"></svg>
@@ -130,6 +220,8 @@
           </span>
         </div>
       </div>
+      <div class="ctxrow" id="ctxCtrl"></div>
+      <div class="mono" id="ctxNota" style="font-size:11px;line-height:1.6;color:var(--texto-tenue);margin-top:8px"></div>
     </div>
     <div class="panel-col" style="flex:0 1 320px;min-width:280px;display:flex;flex-direction:column;gap:14px">
       <div class="card">
@@ -143,9 +235,9 @@
 
   <div id="notaUbicacion" class="nota-mapa mono"></div>
 
-  <div style="display:flex;flex-direction:column;gap:14px;border-top:1px solid #E3DED6;padding-top:26px">
+  <div class="sec" id="barrios-sec">
     <div class="row" style="justify-content:space-between;align-items:flex-end">
-      <h2 style="margin:0;font-size:22px;font-weight:700;letter-spacing:-.01em">Todos los barrios registrados</h2>
+      <h2 style="margin:0">todos los barrios registrados</h2>
       <span class="mono" style="font-size:11px;color:#8A8175" id="resultLine"></span>
     </div>
     <div class="row" style="gap:10px;align-items:center">
@@ -156,11 +248,122 @@
     <div id="cards" hidden></div>
   </div>
 
+  <section class="sec" id="cifras-sec">
+      <h2>el terremoto en cifras</h2>
+      <p class="prosa">Todo lo de abajo se recalcula solo cada vez que alguien abre esta página: es el estado del registro en este momento, no una foto de una fecha.</p>
+      <div class="meta-wrap" id="metaWrap">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap">
+          <span class="mono" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--texto-tenue)">Meta de cobertura</span>
+          <span class="mono" id="metaTexto" style="font-size:12.5px"></span>
+        </div>
+        <div class="meta-barra"><i id="metaBarra" style="width:0%"></i></div>
+        <div class="mono" id="metaNota" style="font-size:11.5px;color:var(--texto-tenue)"></div>
+      </div>
+      <div class="kpis" id="cifrasKpis" style="margin-top:14px"></div>
+      <div class="grid3" style="margin-top:4px">
+        <div class="tarj">
+          <h3>estado de las viviendas</h3>
+          <div class="barras" id="barrasDano"></div>
+        </div>
+        <div class="tarj">
+          <h3>lo que más se pide</h3>
+          <div class="barras" id="barrasNecesidades"></div>
+        </div>
+        <div class="tarj">
+          <h3>dónde se concentra el daño grave</h3>
+          <div class="barras" id="barrasBarrios"></div>
+        </div>
+      </div>
+    </section>
+    <section class="sec" id="contexto-sec">
+      <h2>contexto</h2>
+      <p class="prosa">El 10 de agosto de 2026, un sismo de magnitud 7,4 con epicentro cerca de San José del Palmar afectó el occidente y el centro del país. En el Chocó el daño fue generalizado —cerca del 93 % del departamento reportó afectaciones— y Quibdó quedó entre las ciudades más golpeadas. El 28 de agosto, inundaciones y deslizamientos afectaron más de 300 viviendas en al menos 16 barrios: una emergencia encima de la otra.</p>
+      <p class="prosa"><b>El dato que falta.</b> El censo oficial de damnificados no desagrega por pertenencia étnica. En un departamento mayoritariamente afrodescendiente e indígena, eso significa que la información con la que se decide la ayuda no permite ver quién está siendo afectado. Comunidades indígenas y afrodescendientes del Pacífico empezaron a levantar su propio censo ante ese vacío. Este mapa se inscribe ahí: registra la pertenencia étnica y el género de los hogares atendidos y los publica agregados por barrio, para que esa lectura exista.</p>
+      <p class="prosa"><b>Una barrera de información, no solo de recursos.</b> La Alcaldía habilitó un reporte digital de daños en vivienda con plazo de cierre, pero en varios sectores el reporte solo se está canalizando a través de las Juntas de Acción Comunal. Las familias que no alcanzan a pasar por ahí quedan por fuera del censo oficial y, con él, del acceso a subsidios y materiales. Sin inscripción en el Registro Único de Damnificados no hay acceso a ninguna ayuda oficial.</p>
+      <p class="prosa"><b>Riesgo diferencial para mujeres y niñas.</b> En emergencias aumentan los casos de violencia basada en género, y los albergues y alojamientos temporales son espacios de alto riesgo. A eso se suma la desescolarización: cuando los niños y niñas dejan de ir a la escuela, en Quibdó aumenta el riesgo de uso y reclutamiento por parte de grupos armados —y las amenazas recaen también sobre las madres y cuidadoras que intervienen para proteger a sus hijos e hijas. Por eso el formulario pregunta por escolarización y por redes de apoyo, y por eso la ruta psicosocial incluye esos criterios de derivación.</p>
+      <div id="ctxKpis" class="kpis"></div>
+      <p id="ctxEstado" class="prosa mono"></p>
+    </section>
+
+  <section class="sec" id="metodo-sec">
+      <h2>metodología y fuentes</h2>
+      <p class="prosa">Los datos de necesidades vienen del formulario de campo del equipo. Un script agrega las respuestas por barrio en una hoja de cálculo y esta página lee el resultado publicado, de modo que se actualiza sola cada vez que alguien la abre.</p>
+      <p class="prosa"><b>Qué no pasa por aquí.</b> Ningún dato individual: ni nombres, ni documentos, ni teléfonos, ni los relatos que los voluntarios registran en terreno. Las columnas de texto libre se excluyen completas, porque un relato no se puede anonimizar por partes. Solo se publican textualmente las opciones predefinidas del formulario; cualquier respuesta escrita a mano se cuenta pero no se reproduce. Y el desglose por pertenencia étnica y género se omite en los barrios con menos de tres hogares registrados: en un barrio con un solo hogar, un porcentaje deja de ser un agregado y señala a una familia.</p>
+      <p class="prosa"><b>Qué es cada cosa en el mapa.</b> El tamaño del círculo son los hogares registrados y el color es el porcentaje de viviendas colapsadas o con daño severo. Las áreas punteadas agrupan barrios por comuna según la cartografía social del equipo: son una agrupación de trabajo, no el límite oficial de la comuna. Algunos barrios aparecen con borde punteado porque su ubicación es aproximada, y los que no tienen ubicación confirmada aparecen solo en la lista, nunca inventados sobre el mapa.</p>
+      <p class="prosa"><b>Fuentes externas.</b> Las viviendas evaluadas por satélite son del servicio Copernicus EMS de la Unión Europea, activación EMSR916 (18 destruidas, 8 dañadas y 48 posiblemente dañadas en el centro de Quibdó). Las calles, el río Atrato y la ubicación de los barrios vienen de OpenStreetMap. Las cifras de contexto provienen de reportes de la UNGRD y de prensa nacional.</p>
+      <p class="prosa"><b>Alcance y límites.</b> Esta no es una cifra oficial de damnificados ni pretende serlo: es el registro de los hogares que el equipo de la Fundación ha alcanzado a documentar. Sirve para orientar la ayuda y para mostrar lo que el dato oficial no está mostrando, no para reemplazarlo.</p>
+    </section>
+
+  <section class="sec" id="quienes-sec">
+      <h2>quiénes somos</h2>
+      <p class="prosa">La Fundación Círculo de Estudios Culturales y Políticos es una organización colombiana de derechos humanos, con sede en Bogotá y trabajo de terreno en Chocó, Cartagena y Putumayo. En Quibdó veníamos trabajando desde antes del sismo en la prevención del homicidio de niñas, niños, adolescentes y jóvenes: de ese trabajo —y de la cartografía social que hicimos con las comunidades— salió la base de barrios que sostiene este mapa.</p>
+      <p class="prosa">Después del 10 de agosto de 2026 el equipo abrió una línea de respuesta humanitaria con tres frentes que se sostienen entre sí:</p>
+      <div class="grid3">
+        <div class="tarj">
+          <h3>documentación hogar por hogar</h3>
+          <p>Voluntarias y voluntarios registran en terreno la afectación de cada hogar: estado de la vivienda, dónde está durmiendo la familia, qué necesita, si hay niñas y niños fuera de la escuela y con qué redes cuenta. Es lo que alimenta este mapa.</p>
+        </div>
+        <div class="tarj">
+          <h3>acompañamiento psicosocial</h3>
+          <p>Contención emocional y primeros auxilios psicológicos, hasta cuatro o cinco sesiones por persona. No es atención clínica: cuando aparecen señales que exceden ese alcance —ideación suicida, violencia basada en género activa, riesgo de reclutamiento de NNA— se activa la ruta de derivación con la EPS y las entidades competentes.</p>
+        </div>
+        <div class="tarj">
+          <h3>lectura de contexto y exigibilidad</h3>
+          <p>Leer el daño junto con lo que ya estaba pasando en el territorio, y usar esa lectura para exigir que la respuesta institucional llegue donde no está llegando.</p>
+        </div>
+      </div>
+    </section>
+
+  <section class="sec" id="apoyar-sec">
+      <h2>cómo apoyar</h2>
+      <p class="prosa">Si va a llevar ayuda a Quibdó, la lista de arriba dice qué se está pidiendo en cada barrio y dónde el daño es más grave. Coordinar con esa información evita lo que ya está pasando: barrios que reciben tres entregas de lo mismo mientras otros no reciben nada.</p>
+      <div class="grid3">
+        <div class="tarj">
+          <h3>para organizaciones y cooperación</h3>
+          <p>La Fundación puede documentar, acompañar psicosocialmente y derivar. Lo que hoy limita la respuesta es la capacidad de llegar a más barrios y sostener el acompañamiento en el tiempo, no la falta de rutas.</p>
+        </div>
+        <div class="tarj">
+          <h3>para quien va a entregar ayuda</h3>
+          <p>Revise el barrio antes de salir y avise a la Junta de Acción Comunal correspondiente. Las rutas institucionales, las líneas de emergencia y el directorio de servicios están en la página de recursos.</p>
+        </div>
+        <div class="tarj">
+          <h3>para las familias afectadas</h3>
+          <p>El primer paso es la inscripción en el Registro Único de Damnificados: sin eso no hay acceso a subsidios ni materiales. El paso a paso está en recursos.</p>
+        </div>
+      </div>
+      <p style="margin-top:18px"><a class="btnlink" href="./recursos.html">recursos y rutas de atención →</a></p>
+      <p class="prosa mono" style="font-size:11.5px;margin-top:22px;opacity:.75">Fundación Círculo de Estudios Culturales y Políticos · Bogotá — Quibdó, Chocó. Fuente de los datos: formulario de campo del terremoto → hoja de cálculo → script que agrega por barrio → esta página, que lee el CSV publicado de esa hoja. Ningún dato individual pasa por esta página. Base cartográfica: calles, río y ubicación de barrios de OpenStreetMap (ODbL); viviendas evaluadas por Copernicus EMS, activación EMSR916 (© European Union, 2026).</p>
+    </section>
+
   <footer>Fuente: formulario de campo del terremoto → Google Sheet → script que agrega por barrio → esta página, que lee el CSV publicado de esa hoja. Ningún dato individual (nombre, documento, teléfono, relato) pasa por esta página. Base cartográfica: calles y río de OpenStreetMap (ODbL); ubicación de barrios de OpenStreetMap; viviendas evaluadas por Copernicus EMS, activación EMSR916 (© European Union, 2026).</footer>
 </div>
 
 <script>
 const GEO = {"W":1000,"H":1510,"calles":["M607 1453L613 1456L619 1460L620 1460","M618 1442L613 1456","M644 1436L642 1440L642 1444L643 1449L645 1453L646 1456","M678 1416L670 1419L661 1427L655 1431L651 1437L646 1456L647 1468L647 1474","M653 1400L651 1410L649 1417L646 1423L643 1426L635 1431L632 1433L630 1436L628 1439L622 1458L620 1460","M604 1426L600 1427L597 1428L591 1427L583 1427","M635 1431L632 1428L626 1422L620 1420","M639 1399L637 1418L635 1425L632 1428","M664 1413L660 1412L651 1410","M579 1416L585 1413L600 1405","M686 1491L691 1487L698 1486L714 1484L732 1480L763 1471","M692 1457L694 1465L697 1481L698 1486L698 1490","M761 1488L765 1481L763 1471L757 1448","M732 1480L730 1471L728 1460L726 1452","M743 1467L758 1464","M730 1471L743 1467L741 1459L740 1458L739 1457L728 1460L694 1465","M757 1448L749 1448L742 1449L726 1452L692 1457","M702 1440L697 1441L692 1442L688 1443","M756 1402L757 1421L757 1422L759 1424L760 1426L758 1428L757 1431L757 1448","M669 1332L670 1339L670 1341L668 1360L669 1365L673 1372L677 1376L678 1378L679 1381L679 1386L676 1399L677 1410L678 1416L682 1428L685 1433L688 1443L692 1457","M559 1439L560 1428L562 1422L566 1415L566 1412L566 1411L566 1410L564 1403L563 1401L561 1400L558 1396","M492 1429L492 1423L492 1419L491 1413L491 1399","M548 1426L553 1415L556 1405L557 1400L558 1396","M558 1389L553 1390L543 1394L515 1407","M558 1396L558 1389","M487 1388L489 1390L497 1390L509 1390L514 1391L517 1392","M582 1364L579 1367L573 1370L568 1373L564 1377L561 1382L558 1389","M546 1377L536 1370L530 1368","M500 1363L500 1368L500 1370L502 1371L514 1379L523 1380L525 1380","M509 1362L503 1363L500 1363L493 1357","M660 1397L660 1412","M585 1413L574 1391","M596 1397L603 1397L605 1398L611 1398L612 1399","M582 1364L585 1370L589 1375L592 1379L595 1391L596 1397L597 1400L600 1405L603 1414L604 1426L604 1432","M616 1385L618 1390L612 1399L611 1403","M666 1391L664 1392L659 1392","M633 1388L631 1389L621 1392","M677 1376L676 1382L672 1390L670 1392L668 1394L665 1395L660 1397L653 1400L639 1399","M595 1391L616 1385L621 1384","M665 1395L660 1394L659 1392L661 1375","M762 1375L761 1375L758 1375L756 1376L752 1380L746 1393L745 1394","M762 1387L762 1384L763 1382","M669 1376L666 1391","M661 1375L668 1375L669 1376","M752 1380L745 1379L731 1378L720 1376L713 1374L708 1372L706 1370","M759 1368L760 1367","M679 1381L688 1381L693 1381L699 1379L704 1374L706 1370L707 1367L708 1363L707 1357L705 1352","M735 1372L748 1363L752 1360","M752 1360L752 1357L751 1353L748 1348","M696 1357L705 1352L709 1351L712 1351L716 1351L720 1350L723 1349L736 1350L743 1349L748 1348L753 1346L756 1344","M592 1379L597 1378L613 1370","M615 1377L614 1373L613 1370","M640 1310L640 1318L639 1327L638 1332L633 1338L632 1343L632 1349L632 1355L631 1370L633 1386L633 1388","M568 1314L574 1323L580 1334L583 1346L585 1353L584 1358L582 1364","M609 1337L612 1335L615 1332L617 1329L618 1327L618 1326L618 1325L617 1323L616 1320L616 1316L616 1313L615 1310L615 1309L616 1307L616 1305","M601 1295L607 1300L611 1304L615 1305L616 1305L640 1310L646 1312L650 1313L667 1328L669 1332","M544 1330L549 1329L568 1314L580 1303L590 1295L590 1294L594 1293L601 1295","M590 1295L588 1293L587 1292L587 1291L586 1290L586 1289L585 1287L585 1278L583 1271","M583 1271L576 1270L575 1269","M575 1269L574 1268L574 1267L574 1266L576 1265L578 1265L582 1266L583 1267L583 1268L583 1271","M670 1341L679 1341L683 1340L690 1339L698 1337","M753 1330L747 1334L738 1336","M742 1313L746 1318L753 1330L753 1331","M746 1318L740 1322","M703 1319L707 1307","M742 1313L741 1307L741 1302","M722 1307L729 1306","M711 1297L721 1301L729 1306L737 1311L742 1313","M677 1297L683 1304L689 1311","M741 1302L748 1303","M531 1365L524 1362L518 1356L511 1350","M525 1380L526 1379L530 1368L531 1365L535 1357L537 1352L543 1341L543 1338L544 1330","M526 1320L519 1328L519 1331L519 1335L518 1338L514 1343L511 1344L507 1344L505 1345L499 1351L493 1357L485 1368","M519 1316L514 1323L512 1324L504 1325L498 1326L496 1326L493 1325L484 1324","M530 1323L531 1322L537 1314","M525 1320L526 1318L531 1312","M496 1301L519 1316L525 1320L526 1320L530 1323L541 1329L544 1330","M562 1311L575 1301L576 1301L577 1301L578 1301L579 1301L580 1303","M496 1301L510 1286L516 1280L528 1270L530 1267L532 1260L534 1256L539 1244","M530 1267L518 1261L510 1255","M711 1297L709 1300L707 1307","M693 1281L685 1288L680 1294L677 1297","M693 1281L711 1297","M725 1264L726 1266L735 1276L736 1279L736 1282L737 1296","M682 1278L688 1270L690 1266","M699 1262L698 1264L695 1268L694 1274L693 1281","M695 1268L690 1266L683 1263","M684 1248L691 1251L694 1254L698 1259L699 1262","M681 1245L684 1248","M733 1205L733 1206L735 1217L737 1234L737 1236L736 1238L728 1253L726 1258L725 1263L725 1264","M624 1259L631 1260L638 1261L656 1264L660 1265L672 1274","M631 1218L632 1233L631 1238L624 1259L619 1271L618 1278L616 1281L606 1289L601 1295","M631 1238L641 1240L654 1243","M554 1219L560 1221L566 1223L583 1221L596 1217L601 1217L631 1218L655 1221L658 1222L666 1229L674 1235L680 1244L681 1245","M566 1223L570 1214L573 1210L586 1190L593 1180L595 1177","M611 1180L613 1184L623 1200L629 1207L630 1211L631 1218","M623 1200L648 1188","M560 1180L574 1185L586 1190L598 1195L600 1195L602 1196L603 1196L604 1197L607 1200","M648 1188L649 1188","M176 1420L178 1401L179 1393L180 1376L180 1360","M128 1355L160 1358L180 1360L205 1362","M157 1382L160 1358L161 1346L163 1331","M161 1346L150 1345L143 1345L130 1346","M180 1329L180 1360","M107 1341L163 1331","M163 1331L180 1329","M180 1329L190 1328","M180 1329L180 1316","M160 1315L161 1310L165 1285","M248 1397L229 1397","M209 1391L206 1375L205 1362","M241 1350L231 1350L217 1349","M258 1248L260 1251L261 1253L262 1254L262 1257L259 1282L256 1306L255 1318L255 1334L253 1351L251 1367L248 1392L248 1397L250 1400L251 1403L251 1404L251 1406L252 1412L252 1413L253 1415L256 1422L269 1447","M230 1378L231 1350L232 1317","M205 1362L206 1316","M217 1349L216 1348L215 1346L216 1316","M130 1316L160 1315L180 1316L196 1316L206 1316L216 1316L225 1316L232 1317L255 1318","M226 1303L226 1309L225 1316","M206 1295L207 1301L206 1316","M251 1367L261 1368L264 1368L267 1368L270 1369","M276 1362L277 1362L278 1363L279 1362L280 1362L288 1357","M272 1357L276 1362","M341 1358L336 1359L329 1359L320 1358L302 1356L288 1357L283 1358L281 1359L279 1359L277 1358L272 1357L267 1354L264 1353L262 1352L253 1351","M318 1338L320 1345L321 1347L321 1353L320 1358","M342 1345L341 1344L340 1343L337 1341L336 1341L335 1340L334 1341L330 1343","M262 1352L266 1335L267 1332","M261 1329L267 1332L272 1333L282 1337L292 1335L304 1335L313 1338L316 1338L318 1338","M318 1338L320 1337L332 1326L345 1310L346 1308L349 1306","M255 1334L257 1333L259 1332L260 1332L261 1329L263 1326L264 1325L267 1320L270 1316L273 1313L275 1308L277 1305L279 1303L282 1301L298 1293","M275 1308L256 1306L244 1304L233 1303L226 1303L224 1303L207 1301","M196 1316L196 1296L197 1288","M244 1304L247 1281","M191 1286L194 1286L197 1288L203 1291L205 1292L206 1293L206 1295","M224 1303L220 1284L228 1269L233 1259","M183 1266L188 1271L193 1273L214 1279L217 1281L220 1284","M187 1258L228 1269","M238 1259L233 1259","M191 1248L187 1258L183 1266","M277 1253L262 1257L238 1255","M186 1287L186 1295L186 1301","M180 1290L186 1287L188 1286L191 1286","M167 1242L176 1258L181 1264L183 1266","M176 1258L182 1245","M113 1251L117 1250L122 1250L132 1248","M172 1231L168 1238L167 1240L167 1241L167 1242","M113 1228L124 1230L136 1234L143 1233","M164 1227L170 1230","M115 1215L127 1218L138 1221L154 1225L164 1227","M122 1250L122 1244L122 1240L124 1230L127 1218L130 1205L132 1196L134 1187","M238 1255L237 1255L236 1255L235 1255L234 1256L233 1259L191 1248L186 1246L182 1245L168 1238","M237 1246L250 1245L253 1246L255 1246L258 1248","M233 1303L236 1279L238 1259L238 1255L237 1248L237 1246L237 1238L236 1222L236 1219L234 1216L233 1212L231 1207L230 1203L228 1189L227 1183","M189 1237L186 1246","M170 1230L172 1231L182 1236L189 1237L213 1243L237 1248","M220 1230L222 1231L223 1232L225 1236L226 1236L227 1237L228 1237L232 1238L237 1238","M213 1243L211 1237L211 1234L207 1227L204 1224L202 1214","M190 1222L190 1223L190 1224L191 1224L192 1224L198 1225L204 1224","M191 1217L190 1222","M224 1181L213 1200L210 1205L207 1212L206 1213L204 1214L202 1214L194 1215L193 1216L192 1216L191 1217","M292 1284L259 1282L247 1281L236 1279","M303 1262L298 1266L294 1269L287 1273","M308 1309L298 1293L292 1284L287 1273L277 1253L276 1246L276 1243L277 1238L284 1224L286 1219L285 1215L282 1208L281 1205L280 1203L280 1201L280 1198L281 1195L283 1193L288 1186","M332 1255L328 1254L325 1253L320 1251L309 1249L306 1248L301 1247L298 1245L295 1243L294 1242L293 1240","M328 1202L330 1204L331 1206L331 1209L332 1211L332 1214L332 1216L331 1218L328 1229L327 1232L328 1234L332 1255","M251 1201L253 1202L254 1204L256 1206L256 1207L257 1208L259 1214L260 1218L261 1219L261 1220L263 1221L264 1222L266 1222L267 1222L269 1221L270 1221L271 1220L272 1219L272 1218L275 1214L277 1211L278 1210L279 1208L279 1207L280 1206L281 1205","M319 1186L327 1193L330 1194L332 1195L334 1195L337 1195","M293 1240L292 1238L292 1235L293 1233L296 1223L296 1221L296 1218L296 1215L294 1202L292 1197L291 1194L288 1186L276 1159L275 1157L274 1156L272 1155L266 1150L264 1147L263 1143L263 1140L265 1137","M338 1179L341 1160L340 1157","M324 1153L321 1159L320 1160L320 1161L321 1162L324 1164L326 1165L332 1172L333 1175L335 1179","M113 1251L113 1240L113 1228L115 1215L117 1202L118 1192L120 1184","M117 1202L130 1205","M147 1198L161 1203L166 1204L185 1202L187 1202L190 1201L193 1200","M118 1192L132 1196L145 1201","M132 1248L136 1234L135 1230L138 1221L145 1201L147 1198L149 1193L154 1181L158 1170L163 1160L167 1145L171 1133","M120 1184L134 1187L149 1193","M107 1166L114 1167L123 1169L136 1174L154 1181L178 1189L182 1191L184 1193L189 1197L193 1200L195 1203","M178 1189L183 1177L184 1174L185 1172L186 1168","M136 1174L140 1163","M120 1184L123 1169L127 1157L129 1145","M117 1154L127 1157L140 1163L158 1170","M186 1152L183 1167","M198 1171L186 1168L183 1167L179 1165L163 1160L131 1146L129 1145","M114 1167L117 1154L123 1138","M133 1133L151 1139L167 1145L186 1152L198 1156","M129 1145L130 1140L133 1133L133 1131","M129 1145L126 1142L123 1138L119 1130","M168 1132L171 1133L176 1135L190 1140L196 1141","M151 1139L153 1132","M153 1132L155 1127","M227 1183L224 1181L223 1180L202 1172","M202 1172L198 1171","M247 1168L235 1171L227 1173","M227 1183L227 1173L232 1148","M256 1182L247 1168L245 1157L246 1150L245 1150L245 1149L244 1149","M235 1171L237 1156L238 1149","M237 1156L245 1157L252 1157","M204 1142L212 1143L232 1148L238 1149L244 1149","M196 1141L204 1142","M178 1111L205 1118L231 1124L236 1126L237 1126L238 1126L238 1125","M451 1431L457 1423","M462 1432L473 1414L481 1399","M430 1434L443 1407L449 1399L455 1392","M457 1423L467 1410L474 1399","M448 1416L456 1406","M456 1406L457 1403L465 1392","M470 1388L474 1393L481 1399L491 1399","M474 1399L465 1392L459 1388L454 1384","M455 1392L459 1388","M485 1368L484 1369L483 1374L483 1379L484 1383L487 1388","M454 1384L443 1377L434 1371","M443 1377L453 1368","M474 1353L471 1363L469 1384L470 1388","M419 1367L420 1368L427 1372L428 1372L429 1371L430 1370L431 1369L434 1371","M485 1368L479 1365L471 1363","M438 1348L442 1354L445 1357L453 1368","M438 1348L430 1356L424 1360L419 1366L419 1367","M445 1357L450 1351L452 1350","M452 1350L452 1349L457 1348L459 1347L463 1343L464 1343L467 1342","M463 1298L481 1296L487 1296L490 1297L496 1301","M370 1363L379 1365L394 1372","M347 1366L354 1366L359 1367L361 1366L365 1363L367 1362L370 1363","M364 1343L368 1348L369 1350L370 1363L371 1372L371 1378","M340 1350L340 1352L341 1358","M377 1324L377 1325L374 1331L364 1343L357 1350L348 1355L341 1358","M406 1326L407 1339L406 1344L402 1356","M367 1325L342 1345L341 1347L340 1350","M407 1308L403 1312L402 1314L402 1321L404 1324L406 1326L411 1328L416 1329L422 1330L428 1333L438 1348","M374 1331L367 1325L351 1308L349 1306","M349 1306L346 1302","M366 1282L385 1296L396 1303L403 1307L407 1308L413 1307L436 1292L439 1291L444 1292L448 1294","M361 1279L366 1282","M332 1255L355 1274L361 1279","M392 1195L392 1197L392 1203L393 1220L396 1240L409 1259L409 1261L409 1265L405 1270L400 1275L397 1278L385 1296L379 1306L374 1311L374 1314L377 1322L377 1324","M432 1250L420 1258L416 1259L409 1259","M337 1195L338 1195L338 1196L338 1197L339 1200L339 1201L341 1203L342 1205L343 1206L344 1207L346 1208L349 1211L350 1212L352 1214L353 1219L355 1221L364 1227L374 1231L377 1232L384 1240L386 1242L388 1242L396 1240","M355 1200L358 1201L361 1201L365 1200L379 1197L383 1197L386 1198L392 1203","M359 1193L377 1188L382 1188L391 1192L392 1195","M393 1171L401 1173L404 1173L410 1171L413 1171L439 1179","M448 1294L450 1295L457 1298L463 1298","M481 1296L482 1293L487 1288","M446 1274L447 1275L450 1283L451 1290L450 1295","M432 1250L436 1255L439 1259L442 1268L444 1272L446 1274","M425 1235L428 1236L430 1236L431 1236L438 1241","M440 1195L441 1195","M443 1232L438 1241L433 1248L432 1250","M422 1188L421 1189L420 1196L421 1204L419 1213L418 1218L418 1222L425 1235L429 1245L432 1250","M441 1195L441 1197L443 1202L446 1222L446 1225L445 1230L443 1232","M475 1196L476 1187","M439 1179L443 1180L462 1189L466 1192L471 1195L475 1196L483 1197L485 1198L488 1204","M510 1255L513 1250L517 1244L520 1240","M513 1250L491 1238","M517 1244L501 1236","M501 1236L493 1231","M545 1220L539 1225L534 1228L530 1228","M546 1230L551 1223L554 1219L558 1209L558 1206","M539 1210L533 1211L517 1218","M558 1206L556 1204L547 1200L537 1198","M511 1190L513 1191L518 1194L535 1204","M488 1204L497 1199L509 1191L511 1190","M551 1223L547 1222L545 1220L539 1210L535 1204L537 1198L539 1184L540 1176L542 1166","M478 1175L483 1181L497 1199","M511 1190L511 1186L510 1183L507 1173L505 1171L502 1168","M542 1166L545 1151","M499 1157L499 1158","M501 1152L488 1149L484 1149L478 1149","M436 1128L437 1128L442 1128L447 1128L450 1128L456 1128L479 1127L486 1127L490 1128L508 1137L521 1142L535 1149L541 1150L545 1151L562 1152L569 1153L581 1156L587 1158L603 1168","M508 1137L504 1144L501 1152L499 1157","M545 1151L549 1135L549 1131L548 1127L544 1122L543 1119L542 1115L542 1112","M562 1152L568 1134L571 1125L572 1120L572 1113L574 1104L579 1094","M440 1195L439 1194L433 1191L426 1188L424 1187L422 1188","M443 1180L447 1171L447 1165L448 1160L446 1156L445 1154L440 1153L438 1153","M453 1148L466 1163L473 1169L478 1175","M435 1152L436 1155L435 1160L434 1163L433 1165","M438 1153L435 1152L432 1151","M423 1139L423 1144","M450 1128L451 1144L453 1148","M436 1135L439 1134L444 1132L447 1128","M431 1127L433 1128L436 1128","M479 1127L479 1120L480 1112","M287 1138L288 1140L290 1143L300 1159L305 1166L307 1168L310 1171L312 1172L316 1174L328 1177L335 1179L338 1179L345 1179L355 1177L374 1170L379 1169L381 1169L389 1170L393 1171","M340 1157L339 1155L335 1151L333 1146","M276 1159L276 1156L276 1154L275 1152L273 1148L273 1145L272 1143L272 1141L273 1137","M314 1139L314 1141L314 1144L316 1146L320 1150L321 1151L323 1152L324 1153L327 1152L329 1151L331 1149L333 1146","M333 1146L339 1140","M333 1146L326 1140","M315 1137L314 1139","M326 1140L320 1134","M292 1118L288 1131L287 1135L287 1138","M273 1137L274 1133L276 1129L277 1127L280 1123L283 1121L285 1120L287 1119L290 1117","M393 1171L393 1166","M389 1170L390 1165","M381 1169L381 1164","M374 1170L371 1161L370 1148","M355 1177L356 1150L357 1147L361 1141","M423 1144L422 1147L419 1157","M380 1142L398 1145L400 1145L402 1145L404 1143","M339 1140L344 1135","M274 1115L276 1116L284 1116L287 1116L289 1116L290 1117L292 1118L295 1120L305 1127L308 1130L310 1134L313 1136L315 1137L318 1136L320 1134L328 1130L330 1130L331 1130L332 1130L344 1135L356 1140L361 1141L380 1142","M404 1143L408 1141L411 1140L418 1139L423 1139L427 1139L429 1139L430 1137L432 1136L434 1135L436 1135","M735 1217L730 1221L721 1230L720 1230L719 1230L711 1225","M751 1215L741 1209L737 1207L733 1206","M649 1188L653 1195L658 1201L660 1202L665 1204L670 1206L684 1220","M733 1206L725 1207L722 1206L705 1199","M705 1199L685 1191L677 1187L671 1181L665 1177L659 1174L655 1172L650 1172","M703 1140L726 1185L729 1192L732 1199L733 1205","M683 1142L683 1154L683 1157L680 1162L680 1165L686 1178","M637 1141L643 1143L650 1144L675 1142L683 1142L692 1140L703 1140","M703 1140L715 1141L736 1138L745 1137","M692 1140L692 1128L691 1124L688 1117L682 1108","M617 1181L613 1184","M628 1172L622 1178L617 1181","M603 1168L611 1180","M595 1177L603 1168","M650 1172L644 1170L639 1167L626 1151","M637 1141L626 1151L603 1168","M577 1134L593 1141","M569 1153L577 1134L581 1124L581 1120L582 1115L584 1109L586 1103L587 1103","M581 1124L588 1126L595 1127","M646 1126L638 1121","M736 1138L736 1127L734 1124L730 1122L725 1119L718 1117L713 1115L708 1112L705 1109L703 1104","M688 1117L684 1119L682 1118L676 1115","M728 1080L720 1088","M738 1078L734 1084","M700 1058L704 1064L705 1066L705 1069L706 1071L721 1075L728 1080L734 1084L740 1085","M732 1057L721 1075L714 1080L709 1083","M662 1060L676 1070","M673 1059L666 1054","M678 1032L678 1034L676 1038L666 1054L662 1060L657 1068","M722 1045L731 1055","M593 1122L586 1121L581 1120","M601 1083L610 1097L612 1100L613 1110L616 1115L622 1125L626 1131L637 1141","M670 1080L669 1082L666 1089L646 1126L643 1131L637 1141","M638 1094L650 1096L654 1095L657 1092L659 1087L660 1086","M660 1086L661 1086L666 1089","M657 1068L647 1076L641 1079L631 1081","M657 1068L668 1077L670 1080","M644 1007L646 1008L659 1016L661 1017L663 1018L665 1019","M667 1019L667 1017L667 1016L667 1013L667 1009L660 1005L655 1002L649 998L645 996","M667 1009L667 1008L667 1007L666 1007L659 1002L658 1002L657 1002L655 1002","M700 1058L708 1053L716 1049L722 1045L726 1040","M676 1038L688 1052L694 1057L700 1058","M719 1035L720 1036L726 1040L727 1041","M678 1034L693 1033L698 1034L706 1036L710 1036L718 1035L719 1035","M676 1027L680 1026L683 1025L694 1025L697 1025","M678 1032L676 1027L673 1024L669 1021L667 1019L665 1019","M694 1020L694 1025","M669 1021L676 1008","M649 998L649 1000L649 1001L649 1002L649 1003L650 1004L651 1005L657 1008L659 1009","M643 991L644 989","M573 989L579 989","M683 1004L676 1000L672 995L644 977L637 972L635 971L634 969L634 968L631 963","M644 989L647 985L648 984L649 984L649 983L648 982L647 981L644 980L644 979L644 978L644 977","M665 1019L663 1017L662 1016L648 1007L646 1005L645 1003L645 996L644 993L643 991L638 985L627 964L622 954L618 947L616 945","M591 1049L583 1042L581 1041L566 1015L564 1008L572 995L573 989L570 960L570 955L571 946L571 941L570 938L569 934L566 923L565 911L565 908","M614 946L615 947L620 955L639 989L642 996L643 1004L644 1007","M525 1014L535 1016L546 1017","M526 1005L525 1014","M564 1008L547 1007L537 1006L526 1005L520 1004","M543 968L535 976L527 982L510 992L505 994L494 995L493 996","M535 976L561 987","M570 960L564 964L556 967L551 968L543 968L535 966L532 965L528 966L510 972L502 975L494 978","M510 972L506 962","M493 949L494 950L496 953L500 957","M514 954L517 952L525 945","M543 940L550 944L570 955","M582 949L579 970L579 976L579 989","M603 980L603 975L605 973L614 963L618 959L619 957L620 955","M620 955L622 954","M622 954L623 954","M637 972L646 957L647 955L647 953L646 950L644 949L639 944L632 939L626 934L625 934","M623 954L625 952","M571 946L582 949","M600 920L598 920L595 919L592 918L589 917L584 914L579 911L575 909L573 906L572 904L571 903","M525 945L543 940","M493 949L496 943L499 939L500 937L502 934","M543 940L569 934","M527 932L518 940","M528 925L534 931L543 940","M525 945L518 940L510 937L502 934L494 931L487 928L464 916L461 915L455 914","M494 931L505 920L518 903L518 902","M522 885L565 911L594 928L602 933L608 939L614 946","M616 945L613 942L607 935L603 931L596 927L582 918L565 908L524 883","M516 892L512 894L509 896L499 903","M434 1109L431 1112L427 1115","M456 1128L457 1119L458 1115L456 1110L455 1106L450 1101L449 1099L451 1096","M444 1096L441 1102L439 1104L436 1108L434 1109","M439 1104L434 1100","M434 1100L431 1098","M464 1100L461 1099L454 1097L451 1096","M444 1096L434 1090L433 1089","M433 1089L432 1087L433 1085","M452 1071L448 1082L446 1089L444 1096","M405 1094L408 1097L412 1099L413 1100L421 1104L424 1106L427 1115L430 1124L431 1127","M405 1094L401 1103L396 1109L389 1114L382 1116L376 1116L373 1116L370 1113L368 1112L361 1111L356 1109","M413 1100L414 1096","M334 1084L339 1084L341 1085L342 1086L345 1090L349 1093L358 1096L362 1097L365 1095L372 1087","M372 1087L374 1087L381 1083L385 1082L394 1082L399 1084L401 1086L405 1094","M423 1057L425 1058L424 1064L424 1067L427 1077L427 1080L426 1082L414 1096L412 1096L405 1094","M400 1056L401 1058L402 1072L402 1075L399 1084","M372 1087L371 1086L366 1078L360 1071L356 1067L353 1061L352 1056L349 1043","M360 1071L370 1067L373 1065L380 1059L384 1056L391 1054L396 1054L400 1056","M413 1058L422 1056L423 1057","M452 1071L455 1073L464 1082L466 1085L472 1086L480 1087L485 1088L493 1091L499 1094L507 1103L510 1104L514 1103L518 1101L521 1101L524 1102L528 1105L542 1112","M553 1063L554 1064L553 1080L552 1085L551 1090L549 1093L542 1112","M549 1093L546 1089L543 1082L540 1075L539 1071","M524 1047L525 1049L533 1055L535 1056L543 1058L552 1062L553 1063","M472 1058L479 1049L483 1047L489 1047L507 1047L514 1048L520 1046L524 1047","M524 1047L528 1042L532 1039L533 1037","M508 1036L497 1034","M507 1047L508 1036L508 1019L507 1015L505 1012L495 1004L493 1001L492 998L493 996","M537 1006L535 1016L533 1030L532 1035L533 1037","M566 1015L554 1025","M433 1085L436 1074L437 1070L436 1067L438 1063L439 1059","M449 1062L451 1068","M439 1059L446 1065L448 1066L451 1068L452 1071","M430 1047L433 1048L437 1050L439 1052L442 1055L444 1059L447 1061L449 1062L458 1062L464 1061L469 1060L472 1058","M472 1058L460 1044L455 1037L449 1029","M487 1023L477 1031L460 1044","M429 1028L434 1028","M471 1024L477 1031","M462 1019L449 1029","M495 1004L489 1009L471 1024L455 1037","M349 1043L348 1041","M348 1041L345 1035L344 1033","M345 1035L346 1033","M346 1033L344 1033","M407 1018L410 1030L412 1037L413 1040L416 1043L430 1047","M386 1033L410 1030L429 1028","M346 1033L351 1027L359 1024L367 1024L383 1025L385 1025L387 1024L392 1021L395 1017L398 1017L405 1018L407 1018L410 1016L414 1012L417 1007L419 1002","M351 1027L356 1022L358 1017L364 1006L368 1005L375 1004","M410 1016L413 1018L415 1019L421 1018L425 1016L428 1012","M364 1006L365 1001L367 996L372 990","M371 965L372 990L375 1004L376 1009L381 1018L382 1022L383 1025","M335 1022L334 1007L334 1004L344 987L348 983L361 964","M415 979L415 982L411 1001","M424 975L425 979L419 1002","M361 964L365 965L371 965L389 963L396 964L399 966L413 977L415 979","M398 949L401 950L403 952L411 965L413 968L420 972L423 974L424 975","M424 957L423 957L420 957L415 958","M389 963L394 957L398 949L401 941L403 933","M401 941L405 942L409 941L417 936","M403 933L417 936L422 937","M489 1009L479 998","M428 1012L431 1008L434 999L437 987L441 981L445 976L457 967","M445 976L451 983","M471 962L474 968L476 970L478 974","M457 967L462 964L471 962L475 960L482 957","M457 967L454 958L452 957L448 956L438 956L424 957","M454 958L481 952L487 950L493 949","M482 957L481 952L481 946L482 941L487 928","M422 937L434 938L436 938L439 937","M422 928L423 926","M321 1036L321 1034L322 1017L322 1005L323 997L324 993L324 990L324 989L324 985L323 984L322 976L321 973L320 970L318 965L317 963L316 960L316 957L316 951L316 945L316 943L317 940L319 937L320 935L320 933L321 930","M266 961L264 961L262 961L261 961L261 962L260 963L260 965","M317 940L321 942L328 943L330 944L331 945L336 948L338 949L341 950L347 953L351 955L352 956L358 961L361 964","M289 893L292 904L292 907L289 920L289 923L285 950L280 977","M343 930L344 925L344 923L342 922L340 920L336 918","M274 920L277 921L285 922L289 923L305 926","M286 919L285 922","M277 918L277 921","M274 918L277 918L280 918L286 919L289 920","M305 926L306 915L306 912L298 888","M401 933L408 930L417 929L421 928L422 928","M305 926L321 930L328 930L332 930L343 930L352 930L356 930L391 932L401 933L403 933","M352 930L352 928L351 928L350 927L348 926L344 923","M391 932L391 928L390 920","M352 928L352 926L352 925L351 923L351 921L347 915L346 913L346 910L347 904","M354 904L355 905L354 917","M356 930L363 926L364 925L364 920L365 911L365 905L364 901L362 897L360 892L356 889L352 887L348 884L346 881L345 880","M347 904L348 903L349 903L354 903L354 904","M421 913L419 910L394 889L393 887L393 886","M420 902L418 902L416 900L412 897L410 895L407 888L404 882L401 878","M518 902L518 900L516 892L516 889L515 887L513 883","M468 898L474 896L492 892L510 884L513 883","M513 883L517 884L519 885","M519 881L518 882L518 883L519 884L519 885L520 885L521 885L522 885L523 885L524 884L524 883L524 882L524 881L523 880L522 880L521 880L520 880L519 881","M519 881L516 882L513 883","M524 882L525 880L526 878","M526 878L524 879L522 880","M526 878L529 877","M510 884L511 880L512 878L513 877L514 876L515 874L515 872L516 871L517 869","M265 1137L270 1126L272 1120L274 1115","M344 1135L345 1132L345 1129L346 1125L346 1123L346 1122L345 1121L345 1120L344 1119L342 1119L337 1118L332 1118L331 1117L329 1117L321 1115","M328 1130L329 1126L329 1123L330 1120L331 1117","M308 1130L308 1117L309 1113L311 1105L317 1095L322 1089L325 1087L330 1085L334 1084","M249 1098L274 1115","M349 1093L345 1096L343 1098L339 1100L338 1102L336 1104L335 1105L334 1106L333 1106L331 1105","M331 1105L324 1103L322 1102L319 1102L317 1103L311 1105L302 1096L297 1092","M274 1115L279 1094L282 1079","M279 1094L284 1095L288 1094L294 1093L297 1092L299 1088L302 1079L303 1076L305 1074L308 1072L311 1071L314 1071L319 1071L330 1073L335 1072L346 1070L356 1067","M282 1079L282 1076","M208 1106L207 1113L205 1118","M246 1096L249 1098","M240 1092L246 1096","M150 1086L183 1094L194 1094L211 1093L233 1091L240 1092","M240 1092L243 1069L246 1056","M216 1063L226 1065L234 1067L243 1069","M234 1067L238 1054","M226 1065L229 1051","M247 1051L265 1055","M173 1037L196 1043L219 1049L229 1051L238 1054L246 1056","M120 1114L137 1120L155 1127L168 1132","M119 1130L116 1125L111 1117L110 1115L109 1112","M127 1099L142 1107L175 1119","M133 1131L137 1120L142 1107L150 1086","M114 1065L123 1070L134 1082L150 1086","M127 1026L117 1058L114 1065L109 1112","M150 1086L173 1037","M117 1058L126 1062","M127 1026L140 1028L156 1033L173 1037","M123 1070L126 1062L136 1044L137 1040L139 1036L139 1032L140 1028L141 1017L143 1004L144 1003L149 986L157 964","M322 1060L329 1060L331 1060L334 1060L352 1056","M257 1083L259 1079L261 1076L262 1074L265 1055L271 1027L275 995","M289 1031L312 1035L321 1036L330 1037L334 1038L336 1038L339 1037L341 1037L345 1035","M312 1032L312 1035","M344 1033L339 1035L337 1035L334 1035L331 1035L321 1034L312 1032L289 1029","M287 1030L289 1031","M289 1029L287 1030","M254 1025L271 1027L287 1030","M282 1076L287 1052L289 1031L289 1030L289 1029L294 999L297 980L301 953L305 926","M323 984L325 983L328 983L330 983L332 984L333 984L336 985L337 986L339 986L341 987L344 987","M116 1125L120 1114L127 1099L134 1082L156 1033L167 1007L180 975L181 972L184 955L189 931L194 904L200 878L205 856L208 845","M134 983L149 986","M157 880L152 895L147 922L142 945L139 960L134 983L131 1002L129 1015L127 1026","M170 951L170 948L170 947L168 946L166 946L156 944","M132 943L142 945","M171 937L160 935","M172 931L171 937L182 940","M173 927L172 931","M157 880L158 879L160 877L161 875","M158 874L156 879L157 880","M226 1019L254 1025","M246 1056L247 1051L254 1025L260 992L263 973L266 961L269 947L274 920","M139 960L157 964L181 972L191 975L212 982L233 986L260 992L275 995L294 999L322 1005","M171 1133L175 1119L178 1111L183 1094L196 1043L204 1014L212 982L217 962L222 937L227 910L233 884L240 852L248 826","M147 946L170 951L184 955L195 958L217 962L238 967L263 973L280 977L297 980L324 985","M173 1037L184 1010L191 975L195 958L201 933L208 906L215 881","M211 1093L216 1063L219 1049L226 1019L233 986L238 967L244 942L249 915L255 890L262 857L267 834L268 827L270 817","M147 922L173 927L189 931L201 933L222 937L244 942L269 947L285 950L301 953L316 957","M152 895L170 899L194 904L208 906L227 910L249 915L274 920","M170 872L175 874L187 875L200 878L215 881L233 884L255 890","M274 920L274 918L273 908L270 901L264 895L255 890","M336 918L329 912L327 908L326 906L326 904L325 897L326 890","M336 918L333 917L331 916L329 915L327 913L325 912L324 910L323 906L322 902L321 898L321 894L321 891L321 889L318 884L317 884L316 883","M270 901L289 893L298 888L302 887L313 884L315 883L316 883","M341 874L331 874L329 877L322 878","M316 883L318 881L317 877L315 872L314 867L313 860L312 856L311 852","M321 889L322 885L322 880L322 878L322 873L321 870L321 864L321 858L319 844","M302 887L297 862L294 843L291 829L290 819L291 812L293 801","M324 824L321 827L316 829L313 831L310 833L309 834L308 835L308 839L308 840L308 841L307 842L306 842L300 843L294 843","M291 829L268 827","M170 899L175 874L178 852","M162 874L165 874L168 873L170 872","M160 870L159 870L158 870L158 871L157 872L157 873L158 874L158 875L159 875L160 875L161 875L161 874L162 874L162 873L162 872L162 871L161 870L160 870","M170 872L167 871L165 871L162 871","M158 871L156 871L146 868L145 867L145 866L144 865L145 863","M160 814L164 832L164 836L158 868L158 870","M164 832L173 833L184 836","M146 817L145 815L130 810L128 808L124 795","M184 793L180 794L176 795L164 797L141 802","M158 772L159 778L160 784L164 797L166 806L166 813","M227 867L223 866L220 866L218 867L217 870L215 881","M187 875L192 859","M205 856L193 853","M208 845L227 849L240 852L262 857L297 862","M184 836L193 839","M190 813L184 836","M267 834L248 826L233 822L211 816L200 814L190 813L185 812L177 812L166 813L160 814L146 817L137 819","M227 849L233 822L234 819L234 815L232 811L208 783L204 775L203 771L200 764","M208 793L211 801L212 806L212 810L211 816","M271 802L253 797L247 794L243 793L240 790L239 788","M270 817L272 813L275 797L277 791L277 789","M274 788L273 791L271 802L270 812L270 817","M331 799L337 794L342 790L343 790","M314 784L310 802","M277 789L277 785","M277 785L274 788","M277 785L280 767","M250 759L249 763L250 764L258 770L260 771L261 774L261 781L262 783L263 785L274 788L277 789","M280 767L281 765","M423 926L423 924L423 921L421 913","M439 937L441 935L444 926L446 922L455 914L465 901L468 898","M428 896L427 900L425 901L421 902L420 902","M474 896L464 869L462 866L451 856L440 847L436 844","M417 866L422 863L431 856L433 855L437 851L440 847","M436 844L429 842L423 842L416 843","M436 844L442 837L443 833L443 831","M443 831L448 827","M443 831L441 829L430 823L428 823L426 823L414 825","M393 886L394 884L395 883L401 878L417 866","M368 875L365 875L363 874L356 870L353 870L348 872","M391 864L395 872L401 878","M384 834L385 835L385 837L384 841L376 849L372 856L370 861L368 875L367 881","M376 849L367 853L363 854L357 854L350 853","M416 843L411 844L384 841","M414 825L413 825","M310 802L345 827L349 829L354 830L377 830L380 831L382 832L384 834","M275 797L293 801L310 802L318 800L331 799L342 799L351 799L364 797L367 798L377 800L384 800L387 800L390 801L397 805L400 805L406 804","M171 768L177 779L184 793L186 796L188 797L190 798L200 814","M177 779L160 784L138 791L124 795","M124 795L119 775","M127 742L127 746L128 749L129 757L130 761L131 765L135 777L136 781L138 791L141 802L145 815","M135 777L124 779","M182 756L170 761L171 768","M130 761L143 762L149 762","M129 757L127 757L125 756L122 752L121 752L114 756L112 760L112 763L123 764L131 765","M149 743L136 744L127 746","M247 794L246 796L244 797L242 797L239 796L236 795L233 793L230 790L228 786","M239 788L234 787L228 786L227 786","M239 788L238 784L238 781L241 771","M180 750L182 756L189 776L202 801","M200 764L204 764L207 765L212 764L218 764L225 765L231 765L236 764","M216 752L215 754L207 765L203 771","M215 754L232 760","M195 753L201 753L204 753L207 754","M188 732L192 742L195 753L196 755L197 757L199 761L199 763L200 764","M112 668L126 673L137 677L157 683L160 685L161 686L163 689L166 690L173 690L174 690L176 691L179 696L183 706L186 711L200 718L209 724L219 729L231 734L246 735L267 739L277 743L285 745L305 752L309 752L310 752L320 749L323 750L326 751L326 754L326 757L327 758L329 758L348 757L358 754L363 753L378 754L391 755","M127 742L127 746L128 749L129 757L130 761L131 765L135 777","M203 772L200 764","M171 768L177 779","M130 761L143 762L149 762","M251 759L249 763L250 764L258 770L260 771","M281 767L281 764","M92 603L105 628L105 631L109 642L117 653L121 661L126 673","M178 680L176 683L174 686L173 690","M226 606L227 603L242 598L247 597L253 597L263 599","M217 620L227 624L233 626L236 628L240 630L249 641L251 643L254 643L258 643L264 640L269 639L275 639L285 643","M127 460L115 471","M92 460L98 454L111 441L119 433L122 430","M99 428L105 435L111 441","M187 596L189 592L189 591L190 589L190 582L190 570","M186 570L190 570L201 567L203 565L206 562L211 554","M263 599L265 595L266 591L269 584L268 580L259 566L255 558","M260 426L269 427L278 431L292 436L303 445L307 445L312 447L332 458","M36 554L49 544L74 525L85 518L87 517","M232 495L233 481","M529 613L521 616L514 618L509 620L505 622L503 624L501 626L500 628L500 637L502 653L501 658L494 670L486 680L483 683L480 684","M480 684L480 697L480 698L481 698L484 696","M480 684L474 683L467 684L464 685L463 686L456 695L451 708L440 710L438 710L430 708L424 705L419 704L410 704L403 711L396 716L395 718L392 724L389 729L383 735L381 738L381 743L380 744L379 744L379 745L378 754","M452 633L454 634L459 641L460 644L460 648L459 652L458 655L452 661L450 663L449 663L447 662L442 661L440 661L437 661L434 662L432 663L421 672","M392 653L394 660L394 663L392 668L389 683","M344 717L337 691L335 682L334 667L332 663L327 658L323 653L316 650L308 649L305 651","M292 554L287 562L286 566L288 573L291 579L291 584L294 589L297 595L297 600","M249 641L247 644L246 660L246 666L245 671L243 679L237 689L229 709","M245 640L237 655L223 669","M249 641L247 640L245 640L239 640L236 642L225 650L221 651L214 652L207 651","M217 620L210 628L209 632L207 639L207 651L208 655L209 658L212 661L223 669L224 673L227 678","M209 611L214 608L215 608L218 607L222 607L226 606","M92 603L87 594L87 587L79 578L68 565L49 544","M79 578L87 572L94 567L103 565L113 561L119 559L120 559L120 558","M232 495L223 496L218 496L212 495L209 497L207 500L205 502L204 504","M259 486L259 487L257 493L255 496L253 498","M224 478L225 474L226 471L226 467L226 464L224 462L222 460L220 460L217 459L215 457L215 456L214 454","M195 476L192 473L190 469L189 465L187 462L186 460L183 460L179 458L176 456","M186 460L189 458L192 457L195 455L196 453L198 450L201 447","M195 476L196 480L196 486L195 493L195 497L194 501L192 502","M195 476L205 474L209 474L224 478L233 481","M178 486L174 483L169 482L165 481L159 479L155 477L152 475L149 472L146 469L145 465L145 461","M174 491L170 491L165 492L162 492L157 493","M121 477L101 499","M94 508L118 510","M125 517L124 527L122 541L121 557L120 558","M248 725L252 722L256 717L263 705L266 698L269 693L274 691L282 687L281 679L281 674L279 672L279 669L280 664L281 657L285 645L285 643","M757 756L755 765L755 767L755 768L756 772","M333 294L337 294L350 292L353 291L354 292L358 294L361 297L362 300L362 304L362 309L361 313L362 319L365 322L371 325L379 333","M359 276L360 281L360 284L359 286L357 289L354 292","M367 267L372 268L375 270L377 271L379 274L382 281","M397 272L393 274L389 276L382 281L370 297L362 304","M290 284L291 289L295 300L303 314L304 321L308 327L310 335L309 339L309 343","M264 367L262 368L257 377L256 379L248 384L245 386L242 395L236 401L236 403","M342 429L339 427L336 424L331 422L321 421L318 418L308 404L301 402","M287 407L278 405L275 406L263 414L261 417L260 426","M261 521L269 517L278 500L287 493L292 486L300 482L305 477","M434 321L424 331L415 341L407 350L405 357L404 362L409 380L415 396","M381 743L391 743L393 743L393 742L398 734L400 732L401 731L421 720L434 716","M451 708L450 701L448 693L447 688L447 684L448 676","M308 649L313 633L314 630L317 629L319 629L322 628L332 630L340 631L350 631L383 623L391 626L401 629L411 631L416 633L420 634","M324 564L327 563L329 561L337 546L339 544L342 543L348 542L350 541L353 540L360 533L362 527L365 522L368 516L368 510L366 504","M402 574L401 571L386 556L379 551L375 549L369 546L367 545L360 533","M562 745L561 743L559 743L554 742L539 741L525 738L516 736L512 736L507 736L502 738L492 741L488 741L483 740L480 739L472 741L469 741L458 739L450 740L445 742L437 750L434 751L432 752L428 754L426 756","M469 773L457 769L454 767L448 762L446 759","M403 768L402 770L402 771","M413 782L419 769","M345 717L346 718L347 722L346 724L345 727L342 729L340 730L337 731L335 732L334 733L334 740","M327 719L328 719L344 717L345 717L367 716L371 716L373 718","M410 704L412 697L412 696L412 694L404 680L400 672L392 668","M376 701L376 696L377 691L378 684L377 679L373 672L366 666L364 665L361 664","M362 690L365 680L368 675L373 672L379 669L384 664L386 661L389 657L392 653","M408 545L409 541L410 538L409 530L411 522L413 516L416 508L419 501","M369 572L372 570L379 560L381 558L386 556L390 555L392 554L394 553L401 548L408 545L418 541L431 534L437 532L441 530","M98 454L104 460L115 471L121 477","M96 525L115 528","M118 502L118 510L117 520","M85 497L86 497L96 499L98 499L101 499L118 502","M85 497L84 498L81 503L79 510","M97 534L96 525L95 522L93 516L94 508L96 499","M114 536L97 534","M122 541L115 540L108 539L103 539","M587 178L593 179L596 180L600 181L616 192L618 192L624 192L629 191L631 190L648 183L650 182L653 182L655 182L658 181L662 181L664 181L665 180L667 178L668 177L668 176L670 176L672 175L674 173L676 172L677 171L678 168L680 167L681 167L682 166L684 167L687 167L689 166L690 166L691 166L694 163L696 161L696 160L696 159","M584 169L593 162L597 161L600 161L605 160L607 160L615 156L616 155L618 155L623 155L626 155L628 155L630 154L634 151L636 150L637 150L644 150L646 150L648 150L658 154L664 157L666 157L667 157L670 157L672 157L676 157L679 157L680 157L682 158L684 159L685 159L690 159L694 159L696 159L696 158L699 153L700 150","M567 208L570 203L574 196L577 191L585 184L586 182L587 178L586 173L584 169L577 155L574 147L574 146L575 143L578 137L581 134L584 130L585 127L586 125L587 122","M735 -184L736 -173L735 -170L735 -167L736 -163L737 -159L738 -157L738 -154L735 -146L733 -135L730 -127L727 -121L724 -118L721 -116L717 -114L715 -111L713 -107L711 -98L711 -90L712 -71L711 -65L710 -62L690 -34L685 -25","M454 110L450 117L450 121L451 124L456 133L457 138L454 178L455 182L460 190L462 192L472 196","M149 743L136 744L127 746","M210 628L206 623","M202 600L205 604L209 611L214 617L217 620","M373 718L374 721L374 722L374 725L370 731L365 741","M422 771L419 769L409 766L407 766L405 767L403 768","M400 672L404 674L409 678L415 684L421 692L426 696L428 699L431 702L433 704L434 704L437 705L439 706L440 710","M420 634L421 635L421 636L421 643L422 644L423 645L426 646L431 645L435 644L438 642L443 637L451 633L452 633","M383 623L381 611L381 610","M391 626L390 629L389 633L390 637L392 653","M386 661L379 658L371 655","M320 685L335 682","M222 615L217 620","M252 474L254 478L257 483L259 486","M259 486L266 483L270 480","M252 474L254 473L256 466L259 455L262 452","M233 481L241 477L246 476L252 474","M178 486L194 477L195 476","M161 524L169 512L171 506L172 500L174 491L178 486","M87 517L89 516L93 516L99 518L117 520L125 517L132 517L140 518L151 520L161 524L162 525L179 536L188 539L195 542L207 552L211 554L213 555L219 555L229 552L237 550L245 551L250 552L255 558L258 557L260 557L276 546L280 546L283 547L292 554L308 553L310 553L316 555L325 558","M224 271L226 274L233 279L236 279L245 274L248 274L256 275L260 273L268 257L271 255L274 254","M342 429L348 421L351 416L351 412L351 400L351 388L351 382L349 374L347 369L347 368","M301 402L296 402L287 407L275 414L263 421","M295 300L286 302L282 304L277 309","M290 284L284 285L277 287L271 292L265 296","M94 446L105 435L113 427","M236 403L227 401L225 400L220 401","M245 386L239 382L235 377L233 376L222 372","M314 353L283 374L282 374L281 374L266 367L264 367","M236 403L238 407L237 409L221 422L218 423L214 423","M365 522L379 528L387 531","M339 469L331 470L323 471L315 475","M381 610L383 608L396 596L399 590L402 577L402 574","M422 415L420 411L415 396","M281 764L285 745L288 733L292 710L297 690L305 651L324 564L325 558L329 543L332 530L334 514L337 497L339 493L346 475L350 466L351 464L356 460L358 457L369 438L371 436L373 435","M381 610L371 607L365 607L354 606L339 602","M334 514L326 511L318 508","M368 516L381 517L383 517L384 516L384 514L384 513L383 510L383 509L383 508L384 507L395 496L398 492","M400 518L411 522L411 524L412 524L427 529","M332 530L303 519L297 514","M366 504L364 501L359 497L354 493","M327 483L326 488","M339 493L327 489L326 488","M329 543L314 537","M316 555L321 541","M429 571L425 567L415 559L413 556L408 545","M970 751L971 767","M961 746L963 770","M954 755L955 771","M816 743L816 739L816 738L815 737L808 729","M833 644L836 639L837 637L840 634L848 627L851 622L851 612","M830 654L828 651L827 649L827 645L827 640","M899 641L901 640L917 639","M922 665L916 665L903 665L900 663","M897 652L915 650","M900 663L899 661L897 652L897 643L899 641","M917 677L928 677","M915 683L917 677L916 665","M579 772L575 769L564 764","M623 651L618 660L602 681L595 686L593 693","M595 686L591 675L589 672L589 671L589 669L593 665L598 660L600 657L602 652L604 650L605 650L608 649L619 650L623 651L635 651L638 650L645 645L654 642L656 641L658 641L660 642L662 644L664 647L666 650L669 654L672 656L675 658L679 658L686 657L694 655L697 654L698 652L699 651L699 650L698 649L696 647","M650 666L636 677L632 679L630 680L625 680L622 682L619 684L607 695","M637 770L650 769L652 769L653 770","M662 729L655 728L650 727L647 726L645 723L643 720L640 717L634 709L632 705L632 703L630 700L626 697L623 695L620 695L607 695L602 694L593 693","M617 771L617 766L615 761L613 755L612 751L611 746L610 744L606 740","M687 700L685 698L681 696L653 695","M682 722L687 708L687 703L687 700","M718 726L726 707","M430 617L432 619L433 620L436 622L437 622L438 625L441 633L443 637L450 619L452 614L458 600L463 590L466 582","M502 738L503 759L503 760L502 761L502 762","M502 762L501 762L500 762L499 762L489 756L481 752","M521 726L515 712L510 704","M516 736L518 734L520 732L521 726L526 725L527 724L530 721L532 718","M563 739L572 739L574 738L575 737L586 728L588 724L589 719L590 716L591 705L591 702L591 698L593 693","M564 764L548 766L519 764","M562 745L563 739L564 734L564 722L563 714L562 709L560 704L558 701L557 701L550 699L540 699","M563 777L564 764L563 748L562 745","M434 681L427 687L421 692","M426 696L432 691L437 688","M442 694L433 696L428 699","M366 504L369 495L371 488L372 481L374 478L382 469L386 458L387 457L390 455L398 450L401 447L402 443L402 441L402 429","M345 504L359 497","M416 595L413 604L412 608L411 614","M418 605L413 604L408 602","M404 612L411 614L417 616","M411 631L417 616L419 607L418 606L418 605","M402 574L407 573L411 573L418 575","M427 520L413 516","M308 507L304 509L297 514L291 521L287 530","M305 477L315 466L319 463L323 460L332 458L334 457L337 454L340 450L343 444L343 439L342 432L342 429","M305 477L310 477L315 475","M339 602L332 598L325 595L323 593L323 591L324 577","M342 429L343 432L346 436L349 440L350 443L349 449L347 453L342 458L339 464L339 469L339 471L341 473L346 475","M325 261L329 272L332 292L333 294","M355 324L353 324L350 323L340 322","M309 343L302 340L299 340L294 340L288 339L279 335","M362 309L345 310L336 309","M371 325L383 308L394 292","M387 338L395 327L397 324L401 320L405 315L410 303L410 302L413 288L415 278L416 276L419 274L435 266","M415 396L423 391L427 387L431 382L434 372L438 364L440 361","M381 394L382 395L382 397L383 409","M374 381L391 385L393 385L394 385L395 385L395 384L400 375","M394 431L390 427L388 426L387 425L376 422L374 420L372 417L371 411L371 408L373 389L374 381L374 375L373 366L371 363L370 361L368 359L368 357L369 352","M409 380L405 378L400 375L396 371L394 370L392 370L389 371L384 372L374 375","M353 351L366 343L373 336L376 335L379 333","M351 382L330 381L323 382L315 384L309 383L308 383L306 382L305 380L303 375","M351 400L339 399L335 398L327 396","M339 427L331 434L325 437","M434 321L434 318L435 315L438 311L449 301","M443 283L429 288","M455 310L449 301L448 294L447 291L443 283L443 278L444 274L441 271L435 266","M353 291L347 281L341 271","M379 333L387 338L407 350","M362 319L355 324L353 331L351 338","M316 322L312 325L308 327","M274 254L278 254L280 256L281 257L283 265L286 268L292 271L295 275L295 277L290 284","M309 343L314 353L328 361L332 362L340 364L344 366L347 368","M347 368L351 354L351 353L353 351","M373 389L381 394","M373 435L379 434L394 431L402 429L404 428L416 423L419 421L420 419L422 415","M284 457L290 456L300 447L303 445","M262 452L266 451L270 452L279 456L284 457","M484 311L478 309L470 304L466 295L464 293L455 290","M484 474L484 477L491 490","M457 361L459 367L459 371L460 376L458 384L452 395L450 405L450 413L450 419","M434 321L438 318L440 318L443 318L448 319L453 319L457 317L462 312L465 307L470 304L473 303L485 304L491 302L494 301L496 300L497 298L497 296L498 295","M658 316L660 315L661 313L661 310L658 300L657 292L655 285L655 281L654 279L655 275L665 259L666 257L666 252L668 249L671 246L676 243","M562 313L566 303L567 293L570 266L573 262L576 260L588 254L590 253L591 252L592 252L594 253L595 253L596 252L598 252","M539 299L545 300L548 301","M543 306L545 300","M531 304L543 306L549 308","M525 313L531 304L533 299L533 291L534 287L539 280L542 276L546 271L548 268L551 258","M489 271L481 270L478 268L472 263","M509 305L506 312L505 314L501 318","M547 322L545 334L545 339L547 345L546 350","M591 354L593 343L593 340L590 334L589 329L600 290L601 285L601 278","M620 318L619 306L619 303L618 300","M547 322L554 319L562 313L567 313L569 313L572 315L579 326L583 328L586 329L589 329L616 319L620 318L628 318L641 318L643 318L657 317L658 316","M493 286L498 285L510 281L513 279","M448 294L452 292L454 291L455 290L458 286L459 282","M509 305L502 302L500 302L500 294L500 290L498 285","M464 349L465 336L467 326","M458 355L461 351L462 349L464 349L472 349L475 348","M474 497L473 505L475 512L477 515L480 518L483 518L496 518L499 519L503 520L508 524L511 528L515 536L518 543L522 558L523 561L523 565L523 567L514 578L514 579L514 581L515 583L517 585L522 589L524 592L525 595L527 600L529 603L530 604L530 606L529 613L531 615L533 616L537 616L539 616L546 616L549 617L553 619L562 628L563 632L566 644","M456 481L457 488L459 497","M474 497L466 487L466 482L469 476L469 473L468 468","M442 490L457 488","M532 432L542 446","M505 441L512 430L517 426","M527 456L536 453L542 446L546 446L552 448L562 461L565 463L571 464L581 460","M527 456L530 469L528 472L520 477L517 483L513 485L503 483L499 484L491 490L474 497L459 497L447 510","M516 449L511 458L504 462L496 465L486 472L484 474","M499 438L492 448L486 454L484 456L482 459L479 461","M482 415L482 424L481 429","M466 411L462 429","M491 430L496 424L499 421L501 418L505 410","M458 428L444 431L440 431L438 433L434 436L433 439L433 441L431 446","M461 460L461 456L459 451","M467 430L466 443L465 446L459 451","M446 331L446 340L446 344L446 346L445 348L445 349L446 360","M440 361L438 357L438 355L437 345","M457 361L454 360L451 360L446 360L440 361","M458 384L468 389L472 390L475 390","M491 430L495 433L499 438L505 441L516 449L527 456","M459 451L452 456","M450 419L452 422L454 425L458 428L462 429L467 430L481 429L491 430","M456 334L457 343L458 355L457 359L457 361","M509 305L515 308L525 313L547 322","M484 311L497 303L500 302","M475 348L480 330L484 311","M507 91L505 94L501 96L489 100L483 101L478 101L467 99L461 101L457 106L454 110","M457 106L458 95L457 89L454 84","M655 275L635 267","M567 208L573 215L578 216L588 218L601 221L607 221","M527 184L540 166L542 164","M542 164L545 166L547 168L550 172L551 173L554 175","M597 161L595 151","M510 57L505 43L495 16","M425 65L424 64L419 59L416 58L406 58L402 59L399 54L396 53L390 50L384 48L377 47","M447 61L440 58L435 59L430 61L424 64","M454 84L455 79L459 72","M479 84L478 90L478 101","M457 89L463 86L465 84L468 77L471 75","M454 84L450 83L446 83L437 89L431 92L428 94L424 96L418 99L412 102","M486 179L498 187L512 200","M481 184L493 192L504 203","M538 210L530 207L528 206L525 202L523 199L523 197L524 192L523 191L522 190","M455 182L441 187L435 187L422 183L418 181L415 177L410 167L406 163L396 159L394 157L394 154L394 153L395 144L395 140L393 135L389 128","M495 157L496 160L497 162L503 168L509 175L522 181L527 184","M503 240L510 241L512 241L514 242L519 247L524 251","M516 230L516 219","M488 198L493 192L498 187L504 180L509 175","M472 196L469 204L466 208L454 213","M486 232L475 237L467 238L455 241","M502 242L486 232L481 225L477 218","M441 271L446 262L447 261","M444 274L450 269L455 267","M539 280L530 273L524 270L519 268L518 265L516 252","M454 110L446 105L440 103","M485 128L491 131","M447 261L449 260L457 260","M514 271L514 276L514 277L513 279","M503 240L502 242L500 248L499 250L494 255L494 256L489 271","M527 184L527 185L529 187L536 192","M522 190L504 180L496 171","M541 228L546 226L553 218L556 213L559 212L567 208","M502 238L516 230L521 228L524 228L541 228L544 232L548 235L550 236L553 237L558 238","M489 271L489 279L491 283L493 286L497 292L497 293L498 295","M472 196L475 195L479 195L482 195L486 197L488 198L499 211L500 215L497 227L497 229L502 238L503 240","M479 153L482 149","M489 148L497 152","M500 146L502 148L502 149L501 150L500 150L498 151L497 152L495 157","M500 146L487 139","M482 149L487 139L491 131","M485 128L476 145","M476 145L482 149L495 157","M387 260L393 274","M413 150L406 163","M395 205L402 209L403 210L404 210L410 210L414 210L416 209L419 207L420 204L420 203L420 194L420 191L422 183L425 174L427 164L431 156","M418 181L412 183L409 183L403 183L401 183L398 185L387 192","M424 83L412 86","M399 54L400 51L400 49L400 46L400 44L398 42L394 38","M419 45L413 35L410 32L408 31L405 30L402 30L394 29","M416 58L418 50L419 45L426 30","M391 82L377 77L376 76L375 74L370 69L368 67L366 67L364 67L362 68L361 70L359 72L357 74","M397 66L382 61","M382 147L384 154L384 156L384 157L382 160","M394 154L384 154","M389 89L391 99L390 106L387 121","M382 124L380 123L378 123L368 110L361 99L356 95L351 93","M402 59L397 66L391 82L389 89L381 91L379 93L368 110L360 118","M428 255L426 255L425 255L420 252L418 252L416 252L414 253","M435 266L428 255L425 249L423 243","M216 752L215 754L207 765L203 772","M180 750L182 756L189 776","M182 756L170 761L171 768","M188 732L192 742L195 753L196 755L197 757L199 761L199 763L200 764","M195 753L201 753L204 753L207 754","M215 754L232 760","M200 764L204 764L207 765L212 764L218 764L225 765L231 765L236 764","M311 760L325 760L326 757","M310 752L311 760","M323 726L327 732L329 740L329 745L327 750L326 751","M292 710L312 712L323 713L326 714L327 716L327 719","M288 733L302 733L319 729L323 726L325 721L327 719","M297 690L282 687","M248 725L234 721L231 734","M234 721L235 719L234 716L233 715L229 709L223 701","M129 757L127 757L125 756L122 752L121 752L114 756L112 760L113 763L123 764L131 765","M437 622L441 622L445 622L450 619","M404 680L401 682L399 685L392 693L391 696","M457 359L463 357L472 355L477 354L478 354L479 353L480 353L481 353L483 353L492 355L495 356L497 356L498 355L499 353L500 350","M588 724L593 723L596 723L602 723L606 723L610 719","M618 660L625 659L629 657L632 655L635 651","M432 663L430 660L428 658L425 657L424 657L423 656L422 655L421 648L422 644","M278 733L288 733","M248 725L246 735","M113 427L119 433L118 444L116 447L104 460L97 468L94 472L85 481L85 483L85 484L96 494L97 496L98 499","M276 789L281 767","M425 65L425 70L424 78L424 83L429 90L431 92","M437 69L425 65","M476 145L474 144","M682 -20L666 11L664 15L654 27L653 29L654 32L658 49L659 52L659 57L659 63L658 66L656 70L653 74L650 77L643 81L635 84L630 84L626 85L621 84L619 83L603 70L598 68L593 69L584 72L579 72L549 70L543 68L523 57L519 56L510 57L504 60L500 65L498 69L499 73L507 87L507 91","M409 0L417 10L419 12L421 13L425 14L438 19","M426 30L428 29L429 28L431 27L434 26L435 26L436 25L436 24L437 23L437 21L438 19L439 16L439 15L439 13L439 9","M431 104L430 99L429 97L428 94","M542 164L543 162L544 158L544 151","M640 217L636 211L635 209L633 203L629 191","M395 327L401 333","M661 313L662 313L664 312L666 312L668 310","M641 318L640 310L640 307L640 305L637 295","M643 318L644 321L645 323L648 325L651 328L653 330L654 331L655 334L656 344","M542 276L538 272L538 271L537 270L537 267L537 262","M262 368L252 364L250 363L248 363L246 362L240 356","M113 427L124 415","M259 566L252 570","M264 367L258 344","M492 41L497 43L499 44L501 44L502 44L505 43","M431 298L435 294L436 294L437 293L439 293L447 291","M416 321L424 331","M646 247L653 249L655 249L658 250L660 250L662 250L666 252","M615 156L615 151L615 149L616 148L632 132","M672 157L673 146","M588 254L586 249L584 245L582 239","M628 335L628 318","M431 27L432 29L433 29L435 33L436 36L439 39L443 42L449 45L450 46L452 46L454 46L456 46L457 46L459 47L461 48L462 49L463 51","M408 75L407 69L407 66L406 64L405 62L405 61L406 58","M401 299L410 303","M389 276L402 284","M425 249L437 242","M388 228L393 229L395 228L397 228L399 228L400 227L403 224L404 223L405 219L407 215L408 213L410 210","M280 256L287 251L289 248L290 246L291 243L291 231L291 221L291 217L290 214L288 212L285 208L284 200","M422 444L417 446L415 447L414 446L402 441","M386 458L370 449","M489 414L482 414L482 415","M441 392L444 391L446 392L452 395","M368 359L376 354","M374 478L372 476L367 474L359 471"],"viasMayores":["M757 756L772 757L779 757L807 750L812 748L816 743L821 734L826 730L842 720L844 716L845 711L836 683L828 667L827 660L830 654L836 650L844 650L884 660L890 663L907 679L915 683L923 689L933 694L940 695L951 693L955 691L982 671L985 669L988 669L991 669L992 670L1016 703L1020 706L1025 708L1030 708L1032 707L1035 702L1043 697L1053 690L1055 686L1055 682L1055 679L1055 677L1057 674L1062 673L1078 673L1082 671L1085 667L1085 665L1088 650L1091 646L1099 635L1103 633L1107 632L1119 634L1131 635L1143 631L1149 627L1154 621L1155 615L1156 595L1157 590L1158 586L1163 579L1168 573","M662 729L663 724L666 719L674 717L678 718L680 720L682 722L686 730L690 734L694 735L698 734L710 727L715 726L718 726L719 726L722 728L725 730L728 738L730 741L734 745L757 756","M617 771L623 768L633 758L636 757L648 756L651 755L664 746L665 744L665 741L662 729"],"viasMenores":["M216 134L221 139L222 145L220 159L221 163L223 171L225 181L237 193L240 200L239 207L229 214L222 233L222 237L231 242L234 248L233 251L224 267L224 271","M955 771L963 770L971 767L997 764L1007 767L1016 773","M1023 772L1032 766","M945 773L937 766L929 743L926 707L923 689","M1035 766L1038 772","M836 650L835 648L835 646L833 644L827 640L807 626","M509 400L518 402L525 404L531 405L538 405L544 406L550 408L566 419L575 423L577 425L579 427L580 431L580 434L578 443L578 451L581 460L583 460L586 461L589 464L594 472L597 475L600 476L603 477L604 478L605 479L607 483L608 491L609 496L608 500L607 504L605 506L605 508L604 510L605 511L608 517L609 520L609 524L609 528L607 535L606 538L606 540L607 545L607 549L608 553L609 556L612 558L615 561L620 561L632 561L637 563L641 565L645 571L648 577L650 579L654 581L660 582L666 583L671 587L674 592L674 594L674 598L673 602L673 607L675 611L682 621L684 628L686 640L688 644L690 646L694 647L696 647L699 647L715 641L721 640L727 640L735 641L743 640L750 639L757 636L763 636L772 637L779 639L783 639L786 638L789 634L792 631L799 627L803 626L807 626","M1055 679L1051 679L1046 677L1043 676L1038 677L1032 679L1029 676L1026 673L1020 670L1019 669L1016 666"],"agua":["M105.1 1270.0L110.5 1269.8L118.6 1268.7L130.7 1265.3L133.7 1264.7L137.0 1265.1L146.2 1268.0L153.3 1270.3L159.7 1272.1L168.0 1276.7L175.0 1284.7L175.8 1285.3L176.5 1285.4L177.5 1285.3L188.1 1280.7L190.4 1280.0L190.8 1279.0L190.1 1278.6L187.9 1278.4L184.1 1279.4L180.8 1281.4L177.8 1282.0L174.8 1280.0L171.1 1275.4L168.1 1273.5L163.8 1271.5L160.2 1270.6L153.9 1267.8L146.0 1265.5L137.0 1263.2L136.0 1261.9L136.3 1260.4L138.9 1257.3L142.0 1254.2L145.5 1251.2L148.7 1249.2L154.0 1245.8L159.6 1241.7L162.7 1239.1L164.6 1237.2L166.0 1235.6L167.2 1233.2L166.7 1231.9L164.3 1231.2L162.4 1232.9L160.1 1234.6L157.3 1237.3L154.8 1239.3L151.0 1242.4L146.5 1244.8L142.6 1247.5L139.4 1251.2L135.2 1255.0L131.4 1259.2L124.4 1263.3L119.4 1265.4L113.4 1266.1L104.7 1265.2L105.0 1268.1L105.1 1270.0","M-145.0 1264.2L-129.2 1257.5L-113.7 1249.2L-97.8 1239.7L-84.1 1228.7L-67.2 1212.6L-51.6 1193.1L-37.4 1172.0L-25.1 1147.7L-16.5 1127.8L-5.3 1102.7L1.9 1087.4L11.7 1127.9L21.2 1159.3L11.0 1175.9L-3.6 1198.8L-17.5 1214.7L-23.2 1221.6L-29.0 1230.3L-33.8 1240.8L-39.4 1249.6L-46.7 1258.0L-54.2 1264.4L-64.8 1271.8L-78.9 1280.2L-97.4 1288.8L-118.9 1296.1L-137.7 1302.7L-154.3 1306.5L-174.4 1308.6L-195.8 1308.5","M-196.5 1265.2L-172.4 1267.6L-159.3 1266.9L-145.0 1264.2","M-182.5 1634.0L-181.8 1639.3L-183.1 1645.6","M-121.1 1692.7L-121.9 1668.4L-164.6 1646.1L-184.3 1621.1","M33.7 1239.1L33.5 1242.7L33.1 1245.8L32.4 1252.4L30.6 1261.9L26.3 1276.9L20.4 1293.1L14.6 1307.5L8.4 1319.2L-5.2 1338.0L-20.8 1359.1L-26.3 1366.8L-32.7 1376.7L-37.5 1383.0L-45.0 1390.4L-63.8 1407.0L-68.4 1410.5L-73.9 1413.5L-75.9 1414.1L-77.3 1413.6L-78.4 1412.0L-78.7 1410.5L-78.9 1404.2L-79.5 1398.3L-82.9 1384.3L-84.0 1381.0L-84.2 1379.8L-84.0 1378.8L-82.8 1377.5L-81.7 1376.7L-80.9 1375.2L-80.2 1371.6L-78.9 1364.1L-75.9 1353.0L-73.1 1345.9L-68.5 1336.7L-63.6 1329.6L-54.1 1317.0L-49.5 1312.2L-43.0 1306.7L-34.3 1300.1L-26.9 1294.7L-13.4 1286.1L-7.1 1282.6L-4.1 1281.0L-3.0 1279.7L-2.1 1278.5L-2.2 1276.3L-1.4 1274.3L-0.2 1273.8L1.3 1273.9L2.7 1274.4L3.7 1273.8L4.2 1273.0L4.6 1271.5L5.5 1270.3L7.7 1269.1L10.7 1268.6L13.2 1267.3L15.5 1265.4L19.6 1260.9L22.8 1256.3L27.3 1248.1L29.0 1244.9L30.1 1242.6L31.3 1240.0L32.2 1238.6L32.6 1238.1L33.3 1238.0L33.6 1238.4L33.7 1239.1","M70.6 1318.9L72.1 1331.4L74.7 1349.6L76.3 1370.3L77.1 1393.7L75.8 1418.2L74.0 1437.3L71.1 1445.2L66.4 1453.1L55.0 1463.5L26.7 1484.7L-15.4 1516.5L-24.2 1522.6L-28.6 1522.6L-31.7 1518.3L-33.4 1508.1L-35.2 1482.5L-34.9 1463.3L-30.5 1448.0L-22.4 1431.4L-7.9 1411.1L13.7 1386.1L31.1 1366.7L43.0 1352.2L52.1 1338.2L58.7 1323.9L62.5 1315.5L64.7 1312.1L66.2 1311.4L68.2 1312.9L70.6 1318.9","M-83.1 1449.9L-82.1 1454.6L-80.3 1465.8L-79.7 1476.9L-80.2 1485.6L-82.1 1499.3L-84.7 1520.0L-87.2 1533.8L-89.9 1541.4L-93.9 1549.1L-100.7 1559.5L-105.9 1567.7L-119.0 1583.1L-138.0 1604.8L-152.9 1620.2L-163.6 1629.4L-167.7 1631.8L-170.4 1632.6L-173.8 1631.8L-176.7 1629.9L-178.3 1627.3L-179.4 1623.7L-180.4 1617.5L-181.1 1612.8L-183.2 1607.5","M-182.4 1540.2L-174.1 1526.2L-168.3 1517.7L-161.5 1509.5L-153.7 1501.3L-140.9 1488.9L-129.7 1480.9L-101.6 1462.9L-94.5 1457.6L-89.0 1452.8L-86.4 1450.2L-84.8 1449.4L-83.7 1449.2L-83.1 1449.9","M103.9 1296.2L103.7 1305.1L104.0 1316.8L105.9 1337.2L107.0 1347.5L107.6 1353.0L108.5 1368.3L109.6 1391.7L109.9 1399.1L109.4 1405.6L108.4 1411.7L105.6 1432.0L102.4 1450.2L99.2 1463.8L96.2 1471.0L93.1 1475.8L85.5 1485.7L78.7 1494.1L71.0 1503.1L65.4 1508.8L57.7 1514.6L43.4 1523.9L28.0 1534.7L9.0 1550.5L-16.1 1572.0L-28.7 1583.6L-42.6 1599.9L-65.1 1629.7L-86.8 1656.1L-105.3 1674.5L-121.9 1668.4L-147.0 1656.9L-164.6 1646.1L-178.3 1632.1L-184.3 1621.1","M-195.7 1527.9L-181.7 1506.3L-161.9 1485.7L-145.9 1473.2L-122.1 1457.7L-109.2 1449.7L-102.9 1444.8L-93.4 1432.8L-88.4 1423.9L-86.5 1419.5L-85.9 1416.1L-86.3 1411.4L-88.2 1402.4L-89.9 1393.8L-90.7 1385.0L-90.1 1375.4L-88.8 1362.5L-84.7 1350.0L-78.6 1335.9L-70.3 1322.4L-59.6 1308.5L-52.6 1300.8L-45.9 1295.5L-16.2 1278.0L-0.1 1265.4L11.3 1255.7L18.3 1246.0L24.5 1235.3L27.0 1228.3L28.6 1216.7L29.6 1196.2L25.9 1169.4L21.2 1159.3L11.7 1127.9L1.9 1087.4L12.4 1069.9L24.1 1052.6L29.3 1045.9L34.1 1038.5L36.2 1034.4L37.7 1030.4L38.9 1025.7L39.7 1022.9L40.0 1022.3L42.8 1016.8L47.0 1006.7L52.3 991.6L56.2 978.1L59.0 963.8L64.9 936.1L67.0 913.5L68.3 895.4L68.7 878.0L68.6 866.3L67.0 851.6L65.1 840.9L61.6 823.3L55.1 794.9L45.4 755.9L40.6 734.2L37.6 722.1L33.0 707.9L27.3 691.1L21.3 673.1L15.5 659.0L4.4 641.0L-12.8 619.5L-39.3 591.3L-74.1 558.9L-93.9 542.0L-107.9 532.0L-146.4 509.9L-209.7 480.7","M-197.6 405.0L-161.5 421.4L-135.0 434.8L-111.0 450.1L-78.2 470.3L-66.0 477.8L-55.9 484.3L-28.6 505.6L-13.6 517.2L-7.0 522.5L-0.3 528.5L9.0 536.5L24.9 551.0L36.5 562.8L46.0 574.2L63.4 594.6L70.3 604.5L76.3 616.3L85.0 635.3L89.0 647.9L94.2 665.6L97.7 680.2L101.9 694.7L104.2 708.8L105.8 723.0L105.8 731.3L105.5 738.0L106.4 744.2L108.0 749.8L108.6 752.9L108.7 755.2L108.5 757.9L109.1 762.3L110.3 770.6L111.4 778.3L113.5 786.4L117.2 797.7L119.2 803.9L120.2 807.5L121.5 810.9L122.5 813.2L124.4 817.0L128.4 826.2L132.7 838.2L133.6 845.6L133.7 857.2L132.7 872.9L132.4 877.6L132.0 883.9L131.3 887.6L130.6 891.2L130.5 894.7L132.6 901.2L133.3 906.2L133.4 908.8L132.0 914.2L130.3 923.1L129.5 935.9L129.3 938.7L128.6 943.9L127.2 956.5L124.6 972.1L121.6 988.6L119.8 996.8L116.8 1008.9L112.4 1026.2L108.4 1045.9L105.6 1068.5L104.5 1075.8L103.5 1081.9L103.1 1089.9L103.3 1094.1L103.1 1098.2L102.6 1102.8L101.6 1107.8L100.9 1117.2L100.7 1125.1L101.0 1130.1L101.3 1135.6L101.2 1138.9L100.5 1141.8L99.0 1143.6L98.5 1145.6L99.0 1149.0L100.3 1152.2L101.0 1155.1L101.6 1160.2L101.8 1164.5L102.2 1171.4L103.3 1186.3L104.7 1196.7L105.9 1208.1L106.2 1218.6L105.5 1229.5L105.1 1234.4L103.3 1242.3L102.6 1249.2L103.6 1255.0L104.7 1265.2L105.0 1268.1L105.1 1270.0L104.6 1284.3L103.9 1296.2"],"danos":[[750,1469,"danada"],[753,1468,"danada"],[752,1467,"destruida"],[687,1410,"posible"],[689,1410,"posible"],[690,1408,"destruida"],[647,1394,"destruida"],[680,1373,"posible"],[731,1309,"posible"],[657,1295,"posible"],[483,1396,"posible"],[373,1377,"posible"],[373,1375,"destruida"],[368,1374,"posible"],[373,1373,"posible"],[368,1373,"posible"],[560,1329,"posible"],[555,1327,"posible"],[556,1326,"posible"],[559,1325,"posible"],[208,1409,"posible"],[133,1369,"destruida"],[134,1367,"posible"],[276,1355,"destruida"],[277,1355,"posible"],[275,1355,"destruida"],[284,1355,"posible"],[273,1354,"destruida"],[178,1319,"destruida"],[254,1291,"posible"],[710,1284,"posible"],[711,1282,"posible"],[707,1276,"posible"],[709,1276,"posible"],[719,1265,"posible"],[718,1265,"posible"],[720,1262,"destruida"],[719,1262,"destruida"],[718,1261,"destruida"],[680,1250,"destruida"],[359,1286,"destruida"],[358,1284,"destruida"],[358,1283,"danada"],[355,1282,"posible"],[235,1263,"posible"],[335,1218,"posible"],[258,1181,"posible"],[221,1175,"posible"],[219,1174,"destruida"],[217,1172,"posible"],[603,1304,"posible"],[600,1301,"posible"],[362,1287,"posible"],[362,1285,"posible"],[360,1284,"destruida"],[364,1283,"danada"],[366,1279,"posible"],[594,1074,"posible"],[519,1062,"posible"],[525,1061,"posible"],[678,1248,"posible"],[740,1242,"posible"],[728,1147,"danada"],[608,1049,"danada"],[253,1172,"posible"],[131,1164,"posible"],[136,1164,"posible"],[134,1163,"destruida"],[182,1033,"danada"],[522,1055,"posible"],[608,1036,"danada"],[478,946,"posible"],[477,945,"posible"],[477,944,"posible"]],"aoi":"M127 730L144 718L180 720L215 745L263 750L298 780L413 805L597 919L708 978L739 1082L752 1209L741 1264L783 1488L623 1493L609 1469L574 1451L459 1453L354 1435L327 1378L295 1374L260 1389L275 1448L263 1483L261 1483L258 1483L165 1488L100 1482L90 1350L91 1348L91 1342L77 1128L101 752L127 730Z","barrios":{"Buenos Aires":{"x":392,"y":615,"exacto":1,"osm":"Buenos Aires"},"Casa Blanca":{"x":437,"y":336,"exacto":1,"osm":"Casablanca"},"Ciudadela Mia":{"x":937,"y":780,"exacto":1,"osm":"Ciudadela Mia"},"El Jardín":{"x":388,"y":1121,"exacto":1,"osm":"El Jardín"},"El Porvenir":{"x":390,"y":791,"exacto":1,"osm":"El Porvenir"},"El reposo número 2":{"x":129,"y":522,"exacto":1,"osm":"El Reposo"},"Fuego Verde":{"x":711,"y":834,"exacto":1,"osm":"Fuego Verde"},"Jardín":{"x":388,"y":1121,"exacto":1,"osm":"El Jardín"},"Julio Figueroa":{"x":358,"y":919,"exacto":1,"osm":"Julio Figueroa"},"Kennedy":{"x":146,"y":750,"exacto":1,"osm":"Kennedy"},"La playita":{"x":276,"y":1352,"exacto":1,"osm":"La Playita"},"Lomas de San Judas":{"x":403,"y":962,"exacto":1,"osm":"San Judas"},"Los Ángeles":{"x":694,"y":1066,"exacto":1,"osm":"Los Angeles"},"Medrano":{"x":451,"y":1327,"exacto":1,"osm":"Medrano y Zona Sur"},"Mercedes":{"x":414,"y":1243,"exacto":1,"osm":"Las Mercedes"},"Mis esfuerzos":{"x":346,"y":747,"exacto":1,"osm":"Mis Esfuerzos"},"Monserrate":{"x":216,"y":637,"exacto":1,"osm":"Monserrate"},"Niño Jesús":{"x":225,"y":1252,"exacto":1,"osm":"Niño Jesús"},"Palenque":{"x":198,"y":1355,"exacto":1,"osm":"Palenque"},"Paraíso":{"x":568,"y":752,"exacto":1,"osm":"El Paraíso"},"Playita":{"x":276,"y":1352,"exacto":1,"osm":"La Playita"},"Reposo 2":{"x":129,"y":522,"exacto":1,"osm":"El Reposo"},"Reposo 3":{"x":129,"y":522,"exacto":1,"osm":"El Reposo"},"Rosales":{"x":504,"y":1159,"exacto":1,"osm":"Los Rosales"},"Samper":{"x":471,"y":374,"exacto":1,"osm":"Samper Pizano"},"San Francisco de Medrano":{"x":451,"y":1327,"exacto":1,"osm":"Medrano y Zona Sur"},"San Vicente":{"x":143,"y":1195,"exacto":1,"osm":"San Vicente"},"Santa Ana":{"x":486,"y":917,"exacto":1,"osm":"Santana"},"Santo Domingo":{"x":355,"y":824,"exacto":1,"osm":"Santo Domingo"},"Silencio":{"x":308,"y":972,"exacto":1,"osm":"El Silencio"},"Victoria II":{"x":543,"y":221,"exacto":1,"osm":"La Victoria"},"Villa España sobre la vía Guayabal":{"x":486,"y":170,"exacto":1,"osm":"España"},"Zona Minera":{"x":676,"y":1126,"exacto":1,"osm":"Zona Minera"},"Álamos":{"x":213,"y":712,"exacto":1,"osm":"Los Alamos"},"Caraño":{"x":796,"y":1026,"exacto":0,"ref":"Aeropuerto El Caraño"},"Caraño Piñal":{"x":796,"y":1026,"exacto":0,"ref":"Aeropuerto El Caraño"},"La Esmeralda":{"x":328,"y":1027,"exacto":0,"ref":"Escuela La Esmeralda"},"Obrero":{"x":270,"y":393,"exacto":0,"ref":"Escuela del B. Obrero"},"Parque la Gloria":{"x":402,"y":336,"exacto":0,"ref":"Escuela Parque La Gloria"}},"sinUbicar":["La Cascorba","La Paloma","Las Palmas de Medrada","Obapo","Cabí"],"comunas":{"1":{"nombre":"Comuna 1 · Zona Norte","d":"M291 319Q497 125 530 152Q562 179 695 619Q827 1060 468 918Q109 777 96 644Q84 512 291 319Z","cx":381,"cy":581,"barrios":["Buenos Aires","Casa Blanca","El Porvenir","El reposo número 2","Kennedy","Mis esfuerzos","Monserrate","Paraíso","Reposo 2","Reposo 3","Samper","Victoria II","Villa España sobre la vía Guayabal","Álamos","Caraño","Caraño Piñal","Obrero","Parque la Gloria"]},"2":{"nombre":"Comuna 2 · Porvenir y Platina","d":"M289 892Q315 802 648 784Q981 766 855 931Q729 1096 508 1073Q288 1050 276 1016Q263 983 289 892Z","cx":522,"cy":917,"barrios":["Ciudadela Mia","Fuego Verde","Julio Figueroa","Los Ángeles","Santa Ana","Santo Domingo","Silencio","La Esmeralda"]},"4":{"nombre":"Comuna 4 · San Vicente y Niño Jesús","d":"M171 1182Q226 1206 268 1295Q309 1384 244 1390Q178 1397 147 1277Q115 1158 171 1182Z","cx":224,"cy":1301,"barrios":["La playita","Niño Jesús","Palenque","Playita","San Vicente"]},"3":{"nombre":"Comuna 3 · Anillo Central","d":"M403 962 m -78 0 a 78 78 0 1 0 156 0 a 78 78 0 1 0 -156 0Z","cx":403,"cy":962,"barrios":["Lomas de San Judas"]},"5":{"nombre":"Comuna 5 · Medrano y Zona Sur","d":"M448 1170Q523 1117 486 1245Q448 1373 411 1297Q373 1222 448 1170Z","cx":455,"cy":1264,"barrios":["Medrano","Mercedes","Rosales","San Francisco de Medrano"]},"6":{"nombre":"Comuna 6 · Jardín","d":"M676 1126 m -78 0 a 78 78 0 1 0 156 0 a 78 78 0 1 0 -156 0Z","cx":676,"cy":1126,"barrios":["Zona Minera"]}},"comunaPorBarrio":{"Buenos Aires":1,"Casa Blanca":1,"Ciudadela Mia":2,"El Porvenir":1,"El reposo número 2":1,"Fuego Verde":2,"Julio Figueroa":2,"Kennedy":1,"La playita":4,"Lomas de San Judas":3,"Los Ángeles":2,"Medrano":5,"Mercedes":5,"Mis esfuerzos":1,"Monserrate":1,"Niño Jesús":4,"Palenque":4,"Paraíso":1,"Playita":4,"Reposo 2":1,"Reposo 3":1,"Rosales":5,"Samper":1,"San Francisco de Medrano":5,"San Vicente":4,"Santa Ana":2,"Santo Domingo":2,"Silencio":2,"Victoria II":1,"Villa España sobre la vía Guayabal":1,"Zona Minera":6,"Álamos":1,"Caraño":1,"Caraño Piñal":1,"La Esmeralda":2,"Obrero":1,"Parque la Gloria":1}};
+
+/* ============================================================
+   CAPA DE CONTEXTO DEL TERRITORIO
+   Cada elemento se ubica por BARRIO (usa la ubicación del barrio
+   en el mapa). Categorías válidas: escuela, salud, albergue, agua,
+   riesgo.  "riesgo" no dibuja un punto: marca el barrio con un
+   anillo punteado.
+   Puedes llenar CONTEXTO a mano aquí abajo, o publicar una pestaña
+   de tu hoja con las columnas: categoria, nombre, barrio, estado,
+   nota  — y pegar su enlace CSV en CONTEXTO_CSV_URL.
+============================================================ */
+const CONTEXTO_CSV_URL = "";
+let CONTEXTO = [
+  // { categoria:"escuela", nombre:"I.E. ...", barrio:"...", estado:"funcionando", nota:"" },
+];
+
+const CTX_CATS = {
+  escuela:  {label:'escuelas y colegios',        color:'#FF2E93', forma:'cuadro'},
+  salud:    {label:'puestos y centros de salud', color:'#57E0C8', forma:'cruz'},
+  albergue: {label:'albergues y acopio',         color:'#FFD23F', forma:'triangulo'},
+  agua:     {label:'acueducto y puntos de agua', color:'#4FA8FF', forma:'gota'},
+  riesgo:   {label:'zonas de riesgo por inundación', color:'#FF6B4A', forma:'anillo'}
+};
+const ctxOn = {escuela:true, salud:true, albergue:true, agua:true, riesgo:true};
 
 function norm(s){ return (s||'').toString().trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
 
@@ -184,18 +387,18 @@ function parseCSV(text){
 }
 
 function ramp(v, max){
-  if (!v) return '#F5F3EF';
+  if (!v) return '#141414';
   const t = Math.sqrt(v/Math.max(1,max));
   return 'rgba(197,90,17,' + (0.12 + 0.5*t).toFixed(3) + ')';
 }
 
 if (LOGO_BASE64) {
-  document.getElementById('logoImg').src = LOGO_BASE64;
-  document.getElementById('brandRow').style.display = 'flex';
+  const li = document.getElementById('logoImg');
+  li.src = LOGO_BASE64; li.style.display = 'block';
 }
 function rampSolido(v, max){
   const t = Math.sqrt(Math.max(0,v)/Math.max(1,max));
-  const a=[246,222,199], b=[138,59,6];
+  const a=[58,30,8], b=[255,138,46];
   return 'rgb('+a.map((v0,i)=>Math.round(v0+(b[i]-v0)*t)).join(',')+')';
 }
 function tono(v, max){ return Math.sqrt(Math.max(0,v)/Math.max(1,max)); }
@@ -205,6 +408,13 @@ function luminance(hex){
   const ch = [(v>>16)&255,(v>>8)&255,v&255].map(c=>{const x=c/255; return x<=0.03928?x/12.92:Math.pow((x+0.055)/1.055,2.4);});
   return 0.2126*ch[0]+0.7152*ch[1]+0.0722*ch[2];
 }
+
+// Ayudantes tolerantes: si alguien edita el HTML y quita un elemento, la página
+// no debe romperse (ya pasó una vez: al borrar un párrafo se cayó toda la carga).
+const $ = id => document.getElementById(id);
+const setTexto = (id, txt) => { const e = $(id); if (e) e.textContent = txt; };
+const setHTML  = (id, html) => { const e = $(id); if (e) e.innerHTML = html; };
+const alEvento = (id, ev, fn) => { const e = $(id); if (e) e.addEventListener(ev, fn); };
 
 const svg = document.getElementById('mapa');
 const NS = 'http://www.w3.org/2000/svg';
@@ -224,10 +434,10 @@ function draw(){
   };
 
   // --- base geografica real: rio Atrato, calles y vias ---
-  GEO.agua.forEach(d => add('path', {d, fill:'none', stroke:'#C3D6DC', 'stroke-width':7, 'stroke-linecap':'round'}));
-  GEO.calles.forEach(d => add('path', {d, fill:'none', stroke:'#E7E1D8', 'stroke-width':1.5}));
-  GEO.viasMenores.forEach(d => add('path', {d, fill:'none', stroke:'#E7E1D8', 'stroke-width':1.8}));
-  GEO.viasMayores.forEach(d => add('path', {d, fill:'none', stroke:'#D7CDBF', 'stroke-width':3.2}));
+  GEO.agua.forEach(d => add('path', {d, fill:'none', stroke:'#17323B', 'stroke-width':7, 'stroke-linecap':'round'}));
+  GEO.calles.forEach(d => add('path', {d, fill:'none', stroke:'#232323', 'stroke-width':1.5}));
+  GEO.viasMenores.forEach(d => add('path', {d, fill:'none', stroke:'#282828', 'stroke-width':1.8}));
+  GEO.viasMayores.forEach(d => add('path', {d, fill:'none', stroke:'#3A3A3A', 'stroke-width':3.2}));
 
   // --- viviendas evaluadas por Copernicus (capa opcional) ---
   if (mostrarDanos){
@@ -240,17 +450,20 @@ function draw(){
   Object.keys(GEO.comunas).forEach(num => {
     const cm = GEO.comunas[num];
     const act = selComuna === num;
-    const p = add('path', {d: cm.d, fill: act ? 'rgba(197,90,17,0.10)' : 'rgba(110,101,90,0.045)',
-      stroke: act ? '#C55A11' : '#B7AC9C', 'stroke-width': act ? 2.4 : 1.2,
+    const p = add('path', {d: cm.d, fill: act ? 'rgba(255,122,26,0.10)' : 'rgba(255,255,255,0.025)',
+      stroke: act ? '#FF7A1A' : '#4A463F', 'stroke-width': act ? 2.4 : 1.2,
       'stroke-dasharray': '7 5'});
     p.style.cursor = 'pointer';
     p.addEventListener('click', () => { selComuna = act ? null : num; selBarrio = null; draw(); renderCards(); });
     const tc = add('text', {x: cm.cx, y: cm.cy, 'text-anchor':'middle', 'font-size':12.5,
       'font-family':"'Courier New', monospace", 'font-weight':'bold',
-      fill: act ? '#C55A11' : '#8A8175', stroke:'#FBF8F3', 'stroke-width':3.5, 'paint-order':'stroke'});
+      fill: act ? '#FF7A1A' : '#8A8175', stroke:'#000000', 'stroke-width':3.5, 'paint-order':'stroke'});
     tc.style.pointerEvents='none';
     tc.textContent = cm.nombre.split(' · ')[0].toUpperCase();
   });
+
+  // --- contexto del territorio: equipamientos ubicados por barrio ---
+  dibujarContexto(add);
 
   // --- barrios con datos: circulo proporcional a los hogares ---
   const etiquetas = [];
@@ -271,7 +484,7 @@ function draw(){
     const sel = selBarrio === b.barrio;
 
     const c = add('circle', {cx:g.x, cy:g.y, r:r.toFixed(1), fill,
-      stroke: sel ? '#1B1917' : '#6E655A',
+      stroke: sel ? '#FFFFFF' : '#6E655A',
       'stroke-width': sel ? 3.2 : 1.3,
       'stroke-dasharray': g.exacto ? '' : '3 2.5',
       'fill-opacity': 0.92});
@@ -282,7 +495,7 @@ function draw(){
     if (r >= 11){
       const tx = add('text', {x:g.x, y:g.y + 5, 'text-anchor':'middle', 'font-size':14,
         'font-family':"'Courier New', monospace", 'font-weight':'bold',
-        fill: t > 0.5 ? '#FFFDFA' : '#1B1917'});
+        fill: t > 0.5 ? '#120A02' : '#F2EDE6'});
       tx.style.pointerEvents = 'none'; tx.textContent = String(b.hogares);
     }
     // nombre: el seleccionado siempre; los demas solo si no chocan con otra etiqueta
@@ -292,8 +505,8 @@ function draw(){
     if (sel || (rank < 14 && !choca)){
       etiquetas.push(caja);
       const tn = add('text', {x:g.x, y:g.y - r - 5, 'text-anchor':'middle', 'font-size':13,
-        'font-family':"'Courier New', monospace", 'font-weight':'bold', fill:'#1B1917',
-        stroke:'#FBF8F3', 'stroke-width':3.5, 'paint-order':'stroke'});
+        'font-family':"'Courier New', monospace", 'font-weight':'bold', fill:'#F2EDE6',
+        stroke:'#000000', 'stroke-width':4, 'paint-order':'stroke'});
       tn.style.pointerEvents = 'none'; tn.textContent = b.barrio;
     }
   });
@@ -317,6 +530,105 @@ function draw(){
   renderSide();
 }
 
+function coordBarrio(nombre){
+  const k = Object.keys(GEO.barrios).find(n => norm(n) === norm(nombre));
+  return k ? GEO.barrios[k] : null;
+}
+
+function dibujarContexto(add){
+  const porBarrio = {};
+  CONTEXTO.forEach(it => {
+    const cat = norm(it.categoria);
+    if (!CTX_CATS[cat] || !ctxOn[cat]) return;
+    const g = coordBarrio(it.barrio);
+    if (!g) return;
+    const key = norm(it.barrio);
+    porBarrio[key] = porBarrio[key] || [];
+    porBarrio[key].push({it, cat, g});
+  });
+
+  Object.keys(porBarrio).forEach(key => {
+    const grupo = porBarrio[key];
+    grupo.forEach((o, i) => {
+      const {cat, g} = o;
+      const c = CTX_CATS[cat];
+      if (c.forma === 'anillo'){
+        const e = add('circle', {cx:g.x, cy:g.y, r:30, fill:'none', stroke:c.color,
+          'stroke-width':1.6, 'stroke-dasharray':'4 4', 'stroke-opacity':0.85});
+        e.style.pointerEvents='none';
+        return;
+      }
+      // reparte los puntos en un anillo alrededor del barrio para que no se pisen
+      const ang = (-Math.PI/2) + i * (Math.PI*2/Math.max(4, grupo.length));
+      const d = 22 + (i>=8 ? 12 : 0);
+      const x = g.x + Math.cos(ang)*d, y = g.y + Math.sin(ang)*d;
+      const s = 4.6;
+      let e;
+      if (c.forma === 'cuadro') e = add('rect', {x:x-s, y:y-s, width:s*2, height:s*2, fill:c.color, stroke:'#000', 'stroke-width':1.2});
+      else if (c.forma === 'triangulo') e = add('polygon', {points:[x+','+(y-s-1), (x-s-1)+','+(y+s), (x+s+1)+','+(y+s)].join(' '), fill:c.color, stroke:'#000', 'stroke-width':1.2});
+      else if (c.forma === 'gota') e = add('circle', {cx:x, cy:y, r:s, fill:c.color, stroke:'#000', 'stroke-width':1.2});
+      else e = add('path', {d:'M'+(x-s)+' '+y+'H'+(x+s)+'M'+x+' '+(y-s)+'V'+(y+s), stroke:c.color, 'stroke-width':3, 'stroke-linecap':'round'});
+      const t = add('title'); t.textContent = (o.it.nombre||'') + ' — ' + c.label + (o.it.estado ? ' · ' + o.it.estado : '');
+      e.appendChild(t);
+    });
+  });
+}
+
+function renderCtxCtrl(){
+  // Mientras la capa de equipamientos esté vacía no se muestra nada de ella:
+  // una sección que pide "sube el archivo" no puede quedar visible en una
+  // página que se comparte con otras organizaciones.
+  if (!CONTEXTO.length){
+    ['ctxCtrl','ctxNota','ctxKpis','ctxEstado'].forEach(id => { const e = $(id); if (e) e.hidden = true; });
+    return;
+  }
+  const cont = document.getElementById('ctxCtrl');
+  if (!cont) return;
+  const cuenta = {};
+  CONTEXTO.forEach(it => { const c = norm(it.categoria); cuenta[c] = (cuenta[c]||0)+1; });
+  cont.innerHTML = Object.keys(CTX_CATS).map(k => {
+    const c = CTX_CATS[k], n = cuenta[k] || 0;
+    const marca = c.forma === 'anillo'
+      ? '<i style="border:1.5px dashed '+c.color+';border-radius:50%;background:none"></i>'
+      : '<i style="background:'+c.color+';border-radius:'+(c.forma==='gota'?'50%':'1px')+'"></i>';
+    return '<label class="ctxtog mono"'+(n?'':' style="opacity:.45"')+'>'+
+      '<input type="checkbox" data-cat="'+k+'"'+(ctxOn[k]?' checked':'')+(n?'':' disabled')+'>'+
+      marca+c.label+' <span style="color:var(--texto-tenue)">'+n+'</span></label>';
+  }).join('');
+  cont.querySelectorAll('input[data-cat]').forEach(inp => {
+    inp.addEventListener('change', e => { ctxOn[e.target.getAttribute('data-cat')] = e.target.checked; draw(); });
+  });
+
+  const nota = document.getElementById('ctxNota');
+  const est = document.getElementById('ctxEstado');
+  const ubic = CONTEXTO.filter(it => coordBarrio(it.barrio)).length;
+  const msg = CONTEXTO.length
+    ? 'Capa de contexto: ' + ubic + ' de ' + CONTEXTO.length + ' elementos ubicados. Se colocan sobre el barrio que les corresponde, no en su coordenada exacta; pasa el cursor por encima para ver el nombre.'
+    : 'La capa de contexto está lista pero vacía: todavía no hay escuelas, puestos de salud, albergues ni puntos de agua cargados. Sube el archivo con las columnas categoria, nombre, barrio, estado, nota y aparecen aquí.';
+  if (nota) nota.textContent = msg;
+  if (est) est.textContent = msg;
+
+  const k = document.getElementById('ctxKpis');
+  if (k) k.innerHTML = Object.keys(CTX_CATS).map(c =>
+    '<div><b>'+(cuenta[c]||0)+'</b><span>'+CTX_CATS[c].label.toUpperCase()+'</span></div>').join('');
+}
+
+function cargarContexto(){
+  renderCtxCtrl();
+  if (!CONTEXTO_CSV_URL) return;
+  fetch(CONTEXTO_CSV_URL).then(r=>r.text()).then(text=>{
+    const rows = parseCSV(text);
+    const cab = (rows[0]||[]).map(norm);
+    const ix = n => cab.indexOf(norm(n));
+    const iC = ix('categoria'), iN = ix('nombre'), iB = ix('barrio'), iE = ix('estado'), iNo = ix('nota');
+    CONTEXTO = rows.slice(1).filter(r => r[iC] && r[iB]).map(r => ({
+      categoria: r[iC], nombre: iN!==-1?r[iN]:'', barrio: r[iB],
+      estado: iE!==-1?r[iE]:'', nota: iNo!==-1?r[iNo]:''
+    }));
+    renderCtxCtrl(); draw();
+  }).catch(()=>{});
+}
+
 function agregadoComuna(num){
   const cm = GEO.comunas[num];
   const lista = cm.barrios.map(n => barriosPorNombre[norm(n)]).filter(Boolean);
@@ -335,7 +647,7 @@ function agregadoComuna(num){
 function renderSide(){
   if (selComuna){
     const a = agregadoComuna(selComuna);
-    document.getElementById('selName').textContent = a.cm.nombre;
+    setTexto('selName', a.cm.nombre);
     const filas = [
       ['Barrios con datos', a.lista.length + ' de ' + a.cm.barrios.length],
       ['Hogares registrados', a.hogares],
@@ -353,15 +665,16 @@ function renderSide(){
       b.hogares+(b.hogares===1?' hogar':' hogares')+(b.pctGrave!==null?' · '+b.pctGrave+'% grave':'')+'</span></div>'+
       '<div style="font-size:12px;color:var(--texto-suave);margin-top:3px">'+(b.resumen||'sin datos suficientes')+'</div></div>'
     ).join('');
-    document.getElementById('selDetail').innerHTML =
+    setHTML('selDetail',
       filas.map(([k,v])=>'<div class="kv"><span>'+k+'</span><span>'+v+'</span></div>').join('') +
       '<div class="side-title" style="margin-top:14px">Barrios de esta comuna</div>' + (detalle ||
-      '<div class="muted" style="font-size:12.5px">Todavía no hay hogares registrados en esta comuna.</div>');
+      '<div class="muted" style="font-size:12.5px">Todavía no hay hogares registrados en esta comuna.</div>'));
     return;
   }
   const b = selBarrio ? Object.values(barriosPorNombre).find(x=>x.barrio===selBarrio) : null;
-  document.getElementById('selName').textContent = b ? b.barrio : 'Ninguno';
-  const el = document.getElementById('selDetail');
+  setTexto('selName', b ? b.barrio : 'Ninguno');
+  const el = $('selDetail');
+  if (!el) return;
   if (!b){ el.innerHTML = '<div class="muted" style="font-size:13px">Haz clic en un barrio del mapa o en la lista de abajo.</div>'; return; }
   const rows = [
     ['Hogares registrados', b.hogares],
@@ -370,6 +683,8 @@ function renderSide(){
     ['Con daño leve', b.leve === null ? 's/d' : b.leve],
     ['Sin daño visible', b.sinDano === null ? 's/d' : b.sinDano],
     ['% con daño grave', b.pctGrave === null ? 's/d' : b.pctGrave + '%'],
+    ['Pertenencia étnica', b.etnia || 's/d'],
+    ['Género', b.genero || 's/d'],
     ['Aquí se necesita', b.resumen || 's/d'],
     ['Necesidad prioritaria', b.prioritaria || 's/d'],
     ['Vivienda más frecuente', b.vivienda || 's/d'],
@@ -402,7 +717,7 @@ function renderCards(){
   if (btn) btn.textContent = listaVisible ? 'Ocultar la lista' : 'Ver la lista completa (' + todos.length + ')';
 
   const totalTxt = todos.length + ' barrios/zonas · ' + todos.reduce((a,b)=>a+b.hogares,0) + ' hogares en total';
-  document.getElementById('resultLine').textContent = filtroBarrio ? (list.length + ' de ' + totalTxt) : totalTxt;
+  setTexto('resultLine', filtroBarrio ? (list.length + ' de ' + totalTxt) : totalTxt);
   if (!mostrar) return;
 
   if (!list.length){
@@ -436,13 +751,80 @@ function renderCards(){
   });
 }
 
+
+// ============ EL TERREMOTO EN CIFRAS ============
+// META: personas que el equipo se propuso alcanzar. Cámbiala aquí si cambia.
+const META_PERSONAS = 400;
+
+function renderCifras(){
+  const list = Object.values(barriosPorNombre);
+  if (!list.length) return;
+  const suma = k => list.reduce((a,b) => a + (b[k] == null ? 0 : b[k]), 0);
+  const hogares  = suma('hogares');
+  const personas = suma('personas');
+  const nna      = suma('hogaresNNA');
+  const colaps = suma('colapsadas'), sev = suma('severo'), lev = suma('leve'), sinD = suma('sinDano');
+  const hayD = list.some(b => b.pctGrave !== null);
+  const hayPersonas = personas > 0;
+
+  // --- meta ---
+  const pct = hayPersonas ? Math.min(100, Math.round(personas / META_PERSONAS * 100)) : 0;
+  const barra = $('metaBarra'); if (barra) barra.style.width = pct + '%';
+  setTexto('metaTexto', hayPersonas
+    ? personas + ' de ' + META_PERSONAS + ' personas · ' + pct + '%'
+    : 'faltan los datos de personas por hogar');
+  setTexto('metaNota', hayPersonas
+    ? 'Personas que viven en los ' + hogares + ' hogares registrados hasta ahora. Faltan ' + Math.max(0, META_PERSONAS - personas) + ' para la meta.'
+    : 'La columna "Personas en los hogares" todavía no existe en la hoja: corre el script actualizado y aparece sola.');
+
+  // --- cifras principales ---
+  const kpis = [[String(hogares), 'HOGARES REGISTRADOS']];
+  if (hayPersonas) kpis.push([String(personas), 'PERSONAS EN ESOS HOGARES']);
+  if (nna) kpis.push([String(nna), 'HOGARES CON NIÑAS, NIÑOS O ADOLESCENTES']);
+  kpis.push([String(list.length), 'BARRIOS Y ZONAS']);
+  if (hayD && hogares) kpis.push([Math.round((colaps + sev) / hogares * 100) + '%', 'VIVIENDAS CON DAÑO GRAVE']);
+  setHTML('cifrasKpis', kpis.map(([v,l]) => '<div><b>'+v+'</b><span>'+l+'</span></div>').join(''));
+
+  // --- barras ---
+  const barras = (cont, filas, color) => {
+    const max = Math.max(1, ...filas.map(f => f[1]));
+    setHTML(cont, filas.length ? filas.map(([et, n, extra]) =>
+      '<div class="fila-barra"><span>'+et+'</span>' +
+      '<span class="pista"><i style="width:'+Math.max(2, n/max*100).toFixed(1)+'%;background:'+(typeof color==='function'?color(et):color)+'"></i></span>' +
+      '<span class="val">'+(extra || n)+'</span></div>').join('')
+      : '<div class="muted" style="font-size:12.5px">Sin datos todavía.</div>');
+  };
+
+  const COLOR_DANO = {'Colapsadas':'#FF2E93','Con daño severo':'#FF7A1A','Con daño leve':'#FFD23F','Sin daño visible':'#57E0C8'};
+  barras('barrasDano', hayD ? [
+    ['Colapsadas', colaps], ['Con daño severo', sev], ['Con daño leve', lev], ['Sin daño visible', sinD]
+  ].filter(f => f[1] > 0).map(([e,n]) => [e, n, n + ' (' + Math.round(n/Math.max(1,colaps+sev+lev+sinD)*100) + '%)'])
+    : [], et => COLOR_DANO[et] || 'var(--naranja)');
+
+  // necesidades: se leen de la frase-resumen de cada barrio
+  const cuenta = {};
+  list.forEach(b => (b.resumen || '').split('),').forEach(t => {
+    const nombre = t.replace(/\([^)]*\)?/g, '').replace(/^[,\s]+|[,\s]+$/g, '');
+    if (nombre && nombre.length < 60) cuenta[nombre] = (cuenta[nombre] || 0) + 1;
+  }));
+  const top = Object.entries(cuenta).sort((a,b) => b[1]-a[1]).slice(0,6)
+    .map(([e,n]) => [e, n, n + (n===1 ? ' barrio' : ' barrios')]);
+  barras('barrasNecesidades', top, 'var(--naranja)');
+
+  // barrios por daño grave
+  const porGrave = list.filter(b => b.pctGrave !== null && b.pctGrave > 0)
+    .sort((a,b) => (b.pctGrave - a.pctGrave) || (b.hogares - a.hogares)).slice(0,6)
+    .map(b => [b.barrio, b.pctGrave, b.pctGrave + '% · ' + b.hogares + (b.hogares===1?' hogar':' hogares')]);
+  barras('barrasBarrios', porGrave, '#FF2E93');
+}
+
 function renderKPIs(){
   const list = Object.values(barriosPorNombre);
   const totalH = list.reduce((a,b)=>a+b.hogares,0);
   const ubicables = Object.keys(GEO.barrios).map(norm);
   const enMapa = list.filter(b=>ubicables.indexOf(norm(b.barrio))!==-1).length;
   const kpis = [[String(totalH),'HOGARES'],[String(list.length),'BARRIOS/ZONAS'],[String(enMapa),'EN EL MAPA']];
-  document.getElementById('kpis').innerHTML = kpis.map(([v,l])=>'<div><b>'+v+'</b><span>'+l+'</span></div>').join('');
+  setHTML('kpis', kpis.map(([v,l])=>'<div><b>'+v+'</b><span>'+l+'</span></div>').join(''));
 }
 
 function banner(msg, show){
@@ -453,7 +835,7 @@ function banner(msg, show){
 function cargar(){
   if (!SHEET_CSV_URL || SHEET_CSV_URL.indexOf('PEGA_AQUI') !== -1){
     banner('Esta página aún no está conectada a tu Google Sheet. Pega el enlace CSV publicado en la variable SHEET_CSV_URL, al inicio de este archivo.', true);
-    draw(); renderCards(); renderKPIs();
+    draw(); renderCards(); renderKPIs(); renderCifras();
     return;
   }
   fetch(SHEET_CSV_URL).then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.text(); }).then(text=>{
@@ -483,6 +865,11 @@ function cargar(){
     const iLeve     = col('Daño leve');
     const iSinDano  = col('Sin daño visible');
     const iPctGrave = col('% daño grave');
+    const iEtnia    = col('Pertenencia étnica (agregado)');
+    const iGenero   = col('Género (agregado)');
+    const iPersonas = col('Personas en los hogares');
+    const iNNA      = col('Hogares con niñas, niños o adolescentes');
+    const iComp     = col('Composición del hogar (agregado)');
     const val = (r, i) => (i !== -1 && r[i] != null) ? String(r[i]).trim() : '';
     const num = (r, i) => { const n = parseInt(val(r, i), 10); return isNaN(n) ? null : n; };
 
@@ -499,23 +886,26 @@ function cargar(){
         desesc: val(r, iDesesc), redes: val(r, iRedes),
         colapsadas: num(r, iColaps), severo: num(r, iSevero),
         leve: num(r, iLeve), sinDano: num(r, iSinDano),
-        pctGrave: (pctGrave === null || isNaN(pctGrave)) ? null : pctGrave
+        pctGrave: (pctGrave === null || isNaN(pctGrave)) ? null : pctGrave,
+        etnia: val(r, iEtnia), genero: val(r, iGenero),
+        personas: num(r, iPersonas), hogaresNNA: num(r, iNNA), composicion: val(r, iComp)
       };
     });
     // ¿Ya existen las columnas de daño? Si no, el mapa sigue coloreando por hogares.
     hayDatosDano = Object.values(barriosPorNombre).some(b => b.pctGrave !== null);
-    document.getElementById('actualizado').textContent = 'Actualizado: ' + new Date().toLocaleString('es-CO');
+    setTexto('actualizado', 'Actualizado: ' + new Date().toLocaleString('es-CO'));
     banner('', false);
-    draw(); renderCards(); renderKPIs();
+    draw(); renderCards(); renderKPIs(); renderCifras();
   }).catch(err=>{
     banner('No se pudo cargar el Mapa de Necesidades (' + err.message + '). Revisa que la pestaña esté publicada en la web como CSV y que el enlace en SHEET_CSV_URL sea correcto.', true);
-    draw(); renderCards(); renderKPIs();
+    draw(); renderCards(); renderKPIs(); renderCifras();
   });
 }
 
-document.getElementById('resetBtn').addEventListener('click', ()=>{ selBarrio = null; selComuna = null; draw(); renderCards(); });
-document.getElementById('toggleLista').addEventListener('click', ()=>{ listaVisible = !listaVisible; renderCards(); });
-document.getElementById('chkDanos').addEventListener('change', (e)=>{ mostrarDanos = e.target.checked; draw(); });
+alEvento('resetBtn', 'click', ()=>{ selBarrio = null; selComuna = null; draw(); renderCards(); });
+alEvento('toggleLista', 'click', ()=>{ listaVisible = !listaVisible; renderCards(); });
+cargarContexto();
+alEvento('chkDanos', 'change', (e)=>{ mostrarDanos = e.target.checked; draw(); });
 cargar();
 </script>
 </body>
